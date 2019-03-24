@@ -1,0 +1,27 @@
+footer#footer {
+    background: none repeat scroll 0 0 #1b101f;
+}
+
+#map { 
+    background-image: url("/assets/images/map.png");
+    background-repeat: no-repeat;
+    padding-top: 320px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #9C27B0;
+    font-weight: bold;
+    letter-spacing: 0.0625em;
+}
+
+p {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.03125em;
+    font-weight: 400;
+    color: #fff !important;
+}

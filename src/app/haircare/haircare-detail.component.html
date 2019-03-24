@@ -1,0 +1,45 @@
+<div class=" container card">
+  <div class="card-header">
+    {{pageTitle}}
+  </div>
+
+  <div class="card-body"
+       *ngIf="haircare">
+
+    <div class="row">
+
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-3">Name:</div>
+          <div class="col-md-6">{{haircare.productName}}</div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">Description:</div>
+          <div class="col-md-6">{{haircare.description}}</div>
+        </div>
+      </div>
+
+      <div class="col-md-4"
+           *ngIf="haircare.imageUrl">
+        <img class="center-block img-responsive"
+             [style.height.px]="150"
+             [style.margin.px]="2"
+             [src]="haircare.imageUrl"
+             [title]="haircare.productName">
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <button class="btn btn-outline-secondary mr-3"
+          [routerLink]="['/products/haircare']">
+          <i class="fa fa-chevron-left"></i> Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-danger"
+     *ngIf="errorMessage">{{errorMessage}}
+</div>

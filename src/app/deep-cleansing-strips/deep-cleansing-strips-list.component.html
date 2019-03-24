@@ -1,0 +1,24 @@
+<div class="container pb-5" *ngFor="let product of filteredProducts">
+  <div class="row pt-5 pb-5">
+    <div class="col-md-4">
+      <!-- mat-card for image -->
+      <mat-card>
+        <img class="img-fluid"  [src]="product.imageUrl" alt="{{product.title}}">
+      </mat-card>
+      <!-- mat-card for image -->
+    </div>
+    <div class="col-md-8 txt-align-middle">
+      <h3>{{product.title}}</h3>
+      <h5 style="font-weight: bold;">{{product.subTitle}}</h5>
+      <p>
+        {{product.description}}
+      </p>
+      <ul *ngIf="product.title === 'Natural Deep Cleansing'" [ngClass]="'ul-align'">
+          <li>Enriched with Vitamin A and Almond Oil for skincare</li>
+          <li>Removes Dirt, Grease, and Bacteria</li>
+          <li>Extracts Blackheads and unclogs pores</li>
+        </ul>
+    </div>
+  </div>
+  <hr class="w-100 clearfix">
+</div>

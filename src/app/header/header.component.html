@@ -1,0 +1,56 @@
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark purple  scrolling-navbar ie-nav" [containerInside]="false">
+  <logo>
+    <a class="h4 logo navbar-brand" href="#">Carelinenigeria</a>    
+  </logo> 
+  <links>
+      <ul class="navbar-nav mr-auto" style="margin: 0 auto">
+          <li class="nav-item active waves-light" mdbWavesEffect>
+              <a [routerLink]="['/home']" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a [routerLink]="['/']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">Products</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a [routerLink]="['/about']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">About</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a [routerLink]="['/contact']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">Contact</a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a [routerLink]="['/testimonial']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">Testimonial</a>
+          </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="tel: +234 809 066 6043" class="nav-link"><i class="fa fa-phone"></i></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="https://www.facebook.com/carelinenigeria" target="_blank" class="nav-link"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="https://www.instagram.com/carelinenigeria" target="_blank" class="nav-link"><i class="fa fa-instagram"></i></a>
+          </li>
+          <li class="nav-item waves-light" mdbWavesEffect>
+              <a href="https://www.twitter.com/carelinenig" target="_blank" class="nav-link"><i class="fa fa-twitter"></i></a>
+          </li>
+      </ul>
+  </links>
+</mdb-navbar>
+<nav mat-tab-nav-bar style="margin-top: 80px;">
+    <a mat-tab-link id="a-hover"
+       *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+</nav>
+
+<router-outlet></router-outlet>
+
+

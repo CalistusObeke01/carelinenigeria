@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ul-align {
+    padding: 19px;
+    list-style-type: square;
+}
+
+.tb-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+@media only screen and (max-width: 600px) and (min-width: 0px) {
+    .tb-padding {
+        padding-top: 15px;
+        padding-bottom: 15px;       
+    }
+}
+
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 0 24px;
+    padding: 0;
+}
+
+li {
+    font-weight: 400;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+h3 {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
+}
+
+.t-margin {
+    margin-top: 100px;
+}
+

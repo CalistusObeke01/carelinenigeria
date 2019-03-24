@@ -1,0 +1,30 @@
+
+<mdb-carousel class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'">
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="/assets/images/wax.png" alt="First slide">
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="/assets/images/DSC_0103.JPG" alt="Second slide">
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="/assets/images/DSC_0076.JPG" alt="Third slide">
+  </mdb-carousel-item>
+</mdb-carousel>
+
+<!-- <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+  [animation]="'slide'">
+  <mdb-carousel-item *ngFor="let item of slides; let i = index">
+    <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+      <mdb-card class="my-1">
+        <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4>{{card.title}}</h4>
+          </mdb-card-title>
+          <p>{{card.description}}</p>
+          <a href="#" mdbBtn color="primary" class="waves-light" mdbWavesEffect>{{card.buttonText}}</a>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>  -->

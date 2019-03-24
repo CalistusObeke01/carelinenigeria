@@ -1,0 +1,62 @@
+
+<!-- News jumbotron -->
+<div [ngClass]="'skinlab-bg-img'">
+  <div class=" container text-center p-4">
+    <h2 class="h1-responsive font-weight-bold my-5 " style="color: purple">{{pageTitle}}</h2>
+    <div class="card-body">
+      <div class="row" style="padding-bottom: 2.5rem">
+        <div class="col-md-2 h6">Search Product:</div>
+        <div class="col-md-4">
+          <input type="search"  
+                  [(ngModel)]="listFilter"/>
+        </div>
+      </div>
+      <div class="row p-5"
+            *ngIf="listFilter">
+        <div class="col-md-6">
+          <h5>Searched Product: {{listFilter}}</h5>
+        </div>
+      </div>
+    </div>
+
+  <!-- Grid row  -->
+  <div class="row mask rgba-white-light waves-effect waves-light hoverable mb-2" *ngFor="let product of filteredHaircareProducts">
+    <!-- Grid column -->
+    <div class="col-md-3 offset-md-1 mx-3 my-3">
+
+      <!-- Featured image -->
+      <div class="view overlay waves-light" mdbWavesEffect>
+        <img [src]="product.imageUrl" [style.width.px]="imageWidth"
+        [style.margin.px]="imageMargin" class="img-fluid" alt="{{product.productName}}">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    
+      <div class="col-md-8 text-md-left ml-3 mt-3">
+        <cn-readmore>
+          <h4 class="h4 mb-4"><a id="a-product" [routerLink]= "['/products/haircare', product.id]">{{product.productName}}</a></h4>
+          <p class="font-weight-normal">{{product.description}}</p>
+          <p class="font-weight-normal"><strong>{{product.price | currency:"#":"symbol":"1.2-2"}}</strong></p>
+        </cn-readmore>
+      </div>
+    <!-- Grid column -->
+  </div>
+  <!-- Grid row -->
+  
+
+</div>
+<!-- News jumbotron -->
+
+</div>
+
+<div *ngIf="errorMessage"
+     class="alert alert-danger">
+  Error: {{ errorMessage }}
+</div>
+

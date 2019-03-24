@@ -1,0 +1,36 @@
+.t-margin {
+    margin-top: 65px;
+}
+
+hr {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 8px auto;
+    height: 0;
+    width: 100%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+#a-product{
+    color: #fff !important;
+    text-shadow: 2px 2px 4px #000000;
+    text-transform: uppercase;
+}
+
+#a-product:hover {
+    color: purple !important;
+    text-decoration: none;
+}
+
+.skinlab-bg-img {
+    background-image: linear-gradient(to right,#7f8c8d,#eee,#7f8c8d);
+    background-size: 800px 100%;
+    background-position: 50% 100%; 
+}

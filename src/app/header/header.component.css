@@ -1,0 +1,40 @@
+/* .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color:#9C27B0;
+}
+
+body a:hover {
+    color:#9C27B0;
+}
+
+body a:active {
+    color:#9C27B0;    
+}
+
+.tab-link:active {
+    color:#9C27B0;   
+}
+
+.pur {
+    background-color: #9C27B0;
+} */
+
+
+/* nav> a {
+    color: grey;
+    padding: 10px 20px;
+}
+
+nav> a:hover {
+    color: #9C27B0;
+    font-weight: bold;
+    letter-spacing: 0.0625em;
+} */
+
+#a-hover:hover {
+    color: #9C27B0 !important;
+    text-decoration: none;
+}
+
+#a-hover:active {
+    color:#9C27B0;   
+}
