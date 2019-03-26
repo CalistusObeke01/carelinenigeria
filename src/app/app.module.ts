@@ -6,6 +6,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatTabsModule } from '@angular/material/tabs';
 
 
+import { GoTopButtonModule } from 'ng2-go-top-button';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +39,8 @@ import { AccessModule } from './access/access.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
+    SlimLoadingBarModule,
+    GoTopButtonModule,
     MatTabsModule,
     ContactModule,
     SkinlabModule,

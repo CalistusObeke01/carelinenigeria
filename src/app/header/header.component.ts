@@ -23,5 +23,4 @@ export class HeaderComponent implements OnInit {
       {label: 'Gloves',   path: 'products/powered-latex-gloves'}
     ];
   }
-
 }
