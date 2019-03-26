@@ -27,17 +27,28 @@ export class HaircareListComponent implements OnInit {
 
   constructor(private haircareService: HaircareService, private route: ActivatedRoute) { }
   ngOnInit(): void {
-    this.haircareService.getHaircareProducts().subscribe(
-      haircareProducts => {
-        this.haircareProducts = haircareProducts;
-        this.filteredHaircareProducts = this.performFilter(this.listFilter);
-      },
-      error => this.errorMessage = error as any
-    );
+    this.showHaircareProducts();
+  }
+
+  showHaircareProducts() {
+    // this.haircareService.getHaircareProducts(`haircare`).subscribe((data: any) => {
+    //   console.log(data);
+    //   this.products = data;
+    //   }, (error) => {
+    //     console.log(error);
+    //   });
+
+      this.haircareService.getHaircareProducts(`haircare`).subscribe(
+        haircareProducts => {
+          this.haircareProducts = haircareProducts;
+          this.filteredHaircareProducts = this.performFilter(this.listFilter);
+        },
+        error => this.errorMessage = error as any
+      );
   }
   performFilter(filterBy: string): Haircare[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.haircareProducts.filter((product: Haircare) =>
-      product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+      product.title.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }

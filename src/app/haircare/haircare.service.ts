@@ -10,13 +10,15 @@ import { Haircare } from './haircare';
 })
 
 export class HaircareService {
-  private haircareProductsUrl = 'api/haircareProducts';
-  private uri = 'http://localhost:3000/api/haircare';
+  url = `http://carelinenigeria.herokuapp.com/products`;
 
   constructor(private http: HttpClient) {}
 
-  getHaircareProducts() {
-    return this.http.get<Haircare[]>(this.haircareProductsUrl)
+  getProducts(catCode: string) {
+    return this.http.get(`${this.url}/${catCode}`);
+  }
+  getHaircareProducts(catCode: string) {
+    return this.http.get<Haircare[]>(`${this.url}/${catCode}`)
       .pipe(
         tap(data => console.log(JSON.stringify(data))),
         catchError(this.handleError)
@@ -27,7 +29,7 @@ export class HaircareService {
     if (id === 0) {
       return of(this.initializeProduct());
     }
-    const url = `${this.haircareProductsUrl}/${id}`;
+    const url = `${this.url}/${id}`;
     return this.http.get<Haircare>(url)
       .pipe(
         tap(data => console.log('getHaircareProduct: ' + JSON.stringify(data))),
@@ -55,11 +57,11 @@ export class HaircareService {
     // Return an initialized object
     return {
       id: 0,
-      productName: null,
-      productTitle: null,
+      title: null,
+      subTitle: null,
       price: null,
       description: null,
-      imageUrl: null
+      imageUrl: null,
     };
   }
 }

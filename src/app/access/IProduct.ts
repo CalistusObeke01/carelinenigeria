@@ -1,10 +1,9 @@
-/* Defines the Haircare entity */
-export interface Haircare {
+export interface Product {
     id: number;
     title: string;
     subTitle: string;
+    price: number;
     description: string;
     imageUrl: string;
-    price: number;
+    category: string;
 }
-

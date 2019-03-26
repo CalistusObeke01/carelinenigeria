@@ -11,7 +11,7 @@
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-3">Name:</div>
-          <div class="col-md-6">{{haircare.productName}}</div>
+          <div class="col-md-6">{{haircare.title}}</div>
         </div>
         <div class="row">
           <div class="col-md-3">Description:</div>
@@ -25,7 +25,8 @@
              [style.height.px]="150"
              [style.margin.px]="2"
              [src]="haircare.imageUrl"
-             [title]="haircare.productName">
+             [title]="haircare.title"
+             alt="{{haircare.title}}">
       </div>
     </div>
 

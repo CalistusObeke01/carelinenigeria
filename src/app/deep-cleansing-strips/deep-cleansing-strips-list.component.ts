@@ -8,18 +8,20 @@ import { DeepCleansingStripsService } from './deep-cleansing-strips.service';
 })
 export class DeepCleansingStripsListComponent implements OnInit {
   errorMessage = '';
-  filteredProducts: DeepCleansingStrips[] = [];
+  products: DeepCleansingStrips[] = [];
 
   constructor(private deepcleansingservice: DeepCleansingStripsService) { }
 
   ngOnInit() {
-    console.log('Entered Here');
-    this.deepcleansingservice.getProducts(`haircare`).subscribe((data) => {
+    this.getListData();
+  }
+
+  getListData() {
+    this.deepcleansingservice.getProducts(`haircare`).subscribe((data: any) => {
       console.log(data);
-        // this.filteredProducts = products;
+      this.products = data;
       }, (error) => {
         console.log(error);
       });
   }
-
 }

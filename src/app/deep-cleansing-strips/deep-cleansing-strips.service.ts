@@ -10,13 +10,11 @@ import { DeepCleansingStrips } from './deep-cleansing-strips';
   providedIn: 'root'
 })
 export class DeepCleansingStripsService {
-  private uri = 'api/deepCleansingStripsProducts';
   url = `http://carelinenigeria.herokuapp.com/products`;
 
   constructor(private http: HttpClient) { }
 
   getProducts(catCode: string) {
-    console.log(catCode);
     return this.http.get(`${this.url}/${catCode}`);
   }
 

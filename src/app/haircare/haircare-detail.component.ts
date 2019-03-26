@@ -12,27 +12,15 @@ export class HaircareDetailComponent implements OnInit {
   pageTitle = 'Haircare Detail';
   haircare: Haircare;
   errorMessage: string;
-  productName: string;
 
-  constructor(private haircareService: HaircareService, private route: ActivatedRoute) { }
 
+  constructor(private haircareService: HaircareService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void  {
     const id = +this.route.snapshot.paramMap.get('id');
     this.getProduct(id);
-
-    // this.route.paramMap.subscribe(params => {
-    //   console.log(params.get('productName'));
-    //   this.productName = params.get('productName');
-    // });
   }
-
-  // getHaircareProductName(productName: string) {
-  //   this.haircareService.getHaircareProductName(productName).subscribe(
-  //     haircare => this.onProductRetrieved(haircare),
-  //     error => this.errorMessage = error as any
-  //   );
-  // }
 
   getProduct(id: number) {
     this.haircareService.getHaircareProduct(id).subscribe(
@@ -45,7 +33,7 @@ export class HaircareDetailComponent implements OnInit {
     this.haircare = haircare;
 
     if (this.haircare) {
-      this.pageTitle = `Product Detail: ${this.haircare.productName}`;
+      this.pageTitle = `Product Detail: ${this.haircare.title}`;
     } else {
       this.pageTitle = 'No product found';
     }

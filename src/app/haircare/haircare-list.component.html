@@ -27,7 +27,7 @@
       <!-- Featured image -->
       <div class="view overlay waves-light" mdbWavesEffect>
         <img [src]="product.imageUrl" [style.width.px]="imageWidth"
-        [style.margin.px]="imageMargin" class="img-fluid" alt="{{product.productName}}">
+        [style.margin.px]="imageMargin" class="img-fluid" alt="{{product.title}}">
         <a>
           <div class="mask rgba-white-slight"></div>
         </a>
@@ -40,7 +40,8 @@
     
       <div class="col-md-8 text-md-left ml-3 mt-3">
         <cn-readmore>
-          <h4 class="h4 mb-4"><a id="a-product" [routerLink]= "['/products/haircare', product.id]">{{product.productName}}</a></h4>
+          <h4 class="h4 mb-4"><a id="a-product" [routerLink]= "['/products/haircare', product.id]">{{product.title}}</a></h4>
+          <h5 style="font-weight: bold;">{{product.subTitle}}</h5>
           <p class="font-weight-normal">{{product.description}}</p>
           <p class="font-weight-normal"><strong>{{product.price | currency:"#":"symbol":"1.2-2"}}</strong></p>
         </cn-readmore>
