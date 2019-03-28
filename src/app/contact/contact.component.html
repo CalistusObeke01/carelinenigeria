@@ -68,132 +68,25 @@
     [disabled]="!contactForm.valid">SEND</button>
   </form>
     <!-- Default form contact -->
+
+  <div class="text-center pt-5 pb-5">
+    <ul class="list-unstyled mb-0">
+      <li>
+        <i class="fa fa-map-marker blue-text  fa-2x" aria-hidden="true"></i>
+        <p style="color: #007bff"> {{ fetchAddress() }} </p>
+      </li>
+
+      <li>
+        <i class="fa fa-phone blue-text mt-4 fa-2x"></i>
+        <p><a href="tel: +234 809 066 6043" class="nav-link">+ 234 809 066 6043</a></p> 
+      </li>
+
+      <li>
+        <i class="fa fa-envelope blue-text mt-4 fa-2x"></i>
+        <p><a href="mailto:info@carelinenigeria.com" class="nav-link">info@carelinenigeria.com</a></p>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<div class="container">
-  <p>
-    Form value: {{ contactForm.value | json }}
-  </p>
-  <p>
-    Form Status: {{ contactForm.status }}
-  </p>
-</div>
 
-<!-- <mdb-card>
-
-  <mdb-card-header class="info-color white-text text-center py-4">
-    <h5>
-      <strong>Contact us</strong>
-    </h5>
-  </mdb-card-header>
-
-  <mdb-card-body class="px-lg-5 pt-0">
-
-    <form class="text-center" style="color: #757575;" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-
-      <div class="md-form mt-3">
-        <input type="text" formControlName="contactFormName" id="materialContactFormName" class="form-control"
-          mdbInput>
-        <label for="materialContactFormName">Name</label>
-      </div>
-
-      <div class="md-form">
-        <input type="email" formControlName="contactFormEmail" id="materialContactFormEmail" class="form-control"
-          mdbInput>
-        <label for="materialContactFormEmail">E-mail</label>
-      </div>
-
-      <span>Subject</span>
-      <div class="row">
-        <div class="col-md-12 mx-auto">
-          <mdb-select formControlName="contactFormSubjects" [options]="optionsSelect" placeholder="Choose your option"></mdb-select>
-        </div>
-      </div>
-
-      <div class="md-form">
-        <textarea type="text" formControlName="contactFormMessage" id="materialContactFormMessage" class="form-control md-textarea"
-          mdbInput></textarea>
-        <label for="materialContactFormMessage">Message</label>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 mx-auto d-flex justify-content-center">
-          <mdb-checkbox formControlName="contactFormCopy">Send me a copy of this message</mdb-checkbox>
-        </div>
-      </div>
-
-      <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect"
-        mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">Send</button>
-
-    </form>
-
-  </mdb-card-body>
-
-</mdb-card> -->
-
-      <!-- Question
-    <div class="form-group row mb-2">
-      <label class="col-md-2 col-form-label pt-0">How did you get to know about us?</label>
-      <div class="col-md-8">
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input"
-                   value="newsletter"
-                   type="checkbox"
-                   formControlName="contactFormNewsletter"> Newsletter
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input"
-                    value="advertisement"
-                    type="checkbox"
-                    formControlName="contactFormAdvertisement"> Advertisement
-          </label>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-check-label">
-            <input class="form-check-input"
-                    value="other"
-                    type="checkbox"
-                    formControlName="contactFormOther"> Other
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <div style="float: left">
-      <div class="custom-control custom-checkbox mb-4">
-        <input formControlName="contactFormNewsletter" type="checkbox" class="custom-control-input" id="defaultContactFormCopy" required>
-        <label class="custom-control-label" for="defaultContactFormCopy">Newsletter</label>
-      </div>
-      <div class="custom-control custom-checkbox mb-4">
-        <input formControlName="contactFormAdvertisement" type="checkbox" class="custom-control-input" id="defaultContactFormCopy" required>
-        <label class="custom-control-label" for="defaultContactFormCopy">Advertisement</label>
-      </div>
-      <div class="custom-control custom-checkbox mb-4">
-        <input formControlName="contactFormCopy" type="checkbox" class="custom-control-input" id="defaultContactFormCopy" required>
-        <label class="custom-control-label" for="defaultContactFormOther">Other</label>
-      </div>
-    </div> -->
-
-
-    <!-- Copy -->
-    <!-- <div class="custom-control custom-checkbox mb-4">
-      <input formControlName="contactFormCopy" type="checkbox" class="custom-control-input" id="defaultContactFormCopy" required>
-      <label class="custom-control-label" for="defaultContactFormCopy">Send me a copy of this message</label>
-    </div> -->
-
-    <!-- <div class="mat-tab-links">
-      <a class="docs-component-viewer-section-tab mat-tab-link ng-star-inserted"
-       mat-tab-link="" routerlinkactive="" aria-current="false" aria-disabled="false" 
-       tabindex="0" href="/components/toolbar/overview">overview</a>
-       <a class="docs-component-viewer-section-tab mat-tab-link ng-star-inserted" 
-       mat-tab-link="" routerlinkactive="" aria-current="false" aria-disabled="false"
-        tabindex="0" href="/components/toolbar/api">api</a>
-        <a class="docs-component-viewer-section-tab mat-tab-link ng-star-inserted mat-tab-label-active" 
-        mat-tab-link="" routerlinkactive="" aria-current="true" aria-disabled="false" tabindex="0" 
-        href="/components/toolbar/examples">examples</a>
-        <mat-ink-bar class="mat-ink-bar" style="visibility: visible; left: 188px; width: 120px;">
-        </mat-ink-bar>
-    </div> -->

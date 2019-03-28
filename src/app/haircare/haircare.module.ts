@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'products',
     children: [
       { path: 'haircare', component: HaircareListComponent, data : {
-        pageTitle : 'Haircare Treatment'
+        title : 'Haircare Treatment'
       }
     },
       { path: 'haircare/:id', component: HaircareDetailComponent }

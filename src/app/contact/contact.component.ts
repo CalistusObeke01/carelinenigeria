@@ -10,6 +10,8 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
   // disabledSubmitButton: boolean = true;
   optionsSelect: Array<any>;
+  address = `Shop B7 Imo plaza tradefair
+  complex, Lagos, Nigeria`;
 
   // @HostListener('input') oninput() {
   //   if (this.contactForm.valid) {
@@ -41,6 +43,10 @@ export class ContactComponent implements OnInit {
     console.log('Saved: ' + JSON.stringify(this.contactForm.value));
     alert('Your message has been sent.');
     this.contactForm.reset();
+  }
+
+  fetchAddress() {
+    return this.address;
   }
 }
 

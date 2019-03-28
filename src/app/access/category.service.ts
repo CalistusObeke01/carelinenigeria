@@ -8,7 +8,7 @@ import { Category } from './ICategory';
   providedIn: 'root'
 })
 export class CategoryService {
-  uriCreate = `http://carelinenigeria.herokuapp.com/products/create`;
+  uriCreate = `http://carelinenigeria.herokuapp.com/products/create/`;
   uriGetOne = `http://carelinenigeria.herokuapp.com/products/categories`;
   uriGetAll = `http://carelinenigeria.herokuapp.com/products/categories`;
   uriDelete = `http://carelinenigeria.herokuapp.com/products/categories/delete`;
@@ -38,7 +38,6 @@ export class CategoryService {
   createCategory(category: Category): Observable<Category> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    category.id = null;
     return this.http.post<Category>(`${this.uriCreate}`, category, { headers: headers })
       .pipe(
         tap(data => console.log('createCategory: ' + JSON.stringify(data))),

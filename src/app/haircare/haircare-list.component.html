@@ -54,6 +54,12 @@
 </div>
 <!-- News jumbotron -->
 
+<div class="container">
+  <ul>
+    <li><a (click)="setTitle('good moiuyt')">Good Morning</a></li>
+    <li><a (click)="setTitle('Good Afternoon')">Good Afternoon</a></li>
+    <li><a (click)="setTitle(['pageTitle'])">Good Evening</a></li>
+  </ul>
 </div>
 
 <div *ngIf="errorMessage"

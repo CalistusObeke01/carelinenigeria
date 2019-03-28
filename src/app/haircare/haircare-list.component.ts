@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { Haircare } from './haircare';
 import { HaircareService } from './haircare.service';
+
 
 @Component({
   templateUrl: './haircare-list.component.html',
@@ -13,31 +14,31 @@ export class HaircareListComponent implements OnInit {
   imageMargin = 2;
   errorMessage = '';
 
-  _listFilter = '';
+  ListFilter = '';
   get listFilter(): string {
-    return this._listFilter;
+    return this.ListFilter;
   }
   set listFilter(value: string) {
-    this._listFilter = value;
+    this.ListFilter = value;
     this.filteredHaircareProducts = this.listFilter ? this.performFilter(this.listFilter) : this.haircareProducts;
   }
 
   filteredHaircareProducts: Haircare[] = [];
   haircareProducts: Haircare[] = [];
 
-  constructor(private haircareService: HaircareService, private route: ActivatedRoute) { }
+  constructor(private haircareService: HaircareService,
+              private titleService: Title,
+              ) { }
   ngOnInit(): void {
     this.showHaircareProducts();
+    this.titleService.setTitle(this.pageTitle);
+  }
+
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 
   showHaircareProducts() {
-    // this.haircareService.getHaircareProducts(`haircare`).subscribe((data: any) => {
-    //   console.log(data);
-    //   this.products = data;
-    //   }, (error) => {
-    //     console.log(error);
-    //   });
-
       this.haircareService.getHaircareProducts(`haircare`).subscribe(
         haircareProducts => {
           this.haircareProducts = haircareProducts;
