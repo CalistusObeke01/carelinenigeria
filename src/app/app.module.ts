@@ -24,6 +24,7 @@ import { AboutModule } from './about/about.module';
 import { DeepCleansingStripsModule } from './deep-cleansing-strips/deep-cleansing-strips.module';
 import { NasalStripsModule } from './nasal-strips/nasal-strips.module';
 import { AccessModule } from './access/access.module';
+import { MessagesModule } from './messages/messages.module';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { AccessModule } from './access/access.module';
     DeepCleansingStripsModule,
     NasalStripsModule,
     AccessModule,
+    MessagesModule,
     AppRoutingModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

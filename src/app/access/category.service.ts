@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { Category } from './ICategory';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  uriCreate = `http://carelinenigeria.herokuapp.com/products/create/`;
+  uriCreate = `http://carelinenigeria.herokuapp.com/products/create`;
   uriGetOne = `http://carelinenigeria.herokuapp.com/products/categories`;
   uriGetAll = `http://carelinenigeria.herokuapp.com/products/categories`;
   uriDelete = `http://carelinenigeria.herokuapp.com/products/categories/delete`;

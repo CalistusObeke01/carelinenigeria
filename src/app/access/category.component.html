@@ -4,31 +4,31 @@
       <h2 class="h3-responsive font-weight-bold my-5">Creating Categories</h2>
     </div>
     <div class="card-body">
-      <form novalidate [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <form novalidate [formGroup]="categoryForm">
         <div class="form-group">
-          <label class="col-md-4">Product Name</label>
+          <label class="col-md-4">Category Name</label>
           <input type="text" formControlName="name" class="form-control" name="name"
           [ngClass]="{'is-invalid': (categoryForm.get('name').touched || categoryForm.get('name').dirty) && !categoryForm.get('name').valid }"
         required/>
         <span class="h3 invalid-feedback">
           <span *ngIf= "!!categoryForm.get('name').errors?.required">
-            <i class="fa fa-info-circle"></i> Name is required.
+            <i class="fa fa-info-circle"></i> Category name is required.
           </span>
         </span>
         </div>
         <div class="form-group">
-          <label class="col-md-4">Product Code</label>
+          <label class="col-md-4">Category Code</label>
           <input type="text" formControlName="code" class="form-control" name="code"
           [ngClass]="{'is-invalid': (categoryForm.get('code').touched || categoryForm.get('code').dirty) && !categoryForm.get('code').valid }"
           required/>
           <span class="h3 invalid-feedback">
             <span *ngIf= "!!categoryForm.get('code').errors?.required">
-              <i class="fa fa-info-circle"></i> Code is required.
+              <i class="fa fa-info-circle"></i> Category code is required.
             </span>
           </span>
         </div>
         <div class="form-group">
-          <label class="col-md-4">Product Description</label>
+          <label class="col-md-4">Category Description</label>
           <input type="text" formControlName="description" class="form-control" id="description" name="descrription"/>
           <small class="col-md-8" id="description" class="form-text text-muted">This field can be left blank.</small>
         </div>
@@ -40,16 +40,6 @@
   </div>
 </div>
 
-<div class="container">
-  <p>
-    Form value: {{ categoryForm.value | json }}
-  </p>
-  <p>
-    Form Status: {{ categoryForm.status }}
-  </p>
-</div>
-
-<div class="container" *ngFor="let category of categories">
-  <a>{{category.name}}</a>
-  {{errorMessage}}
+<div class="alert alert-danger"
+     *ngIf="errorMessage">{{errorMessage}}
 </div>

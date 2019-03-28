@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CategoryService } from './category.service';
 import { Category } from './ICategory';
+
+import { MessagesService } from '../messages/messages.service';
 @Component({
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
@@ -10,9 +13,13 @@ export class CategoryComponent implements OnInit {
   categoryForm: FormGroup;
   categories: Category[] = [];
   category: Category;
-  errorMessage;
+  errorMessage: string;
 
-  constructor(private fb: FormBuilder, private categoryservice: CategoryService) { }
+  constructor(private fb: FormBuilder,
+              private categoryservice: CategoryService,
+              private messageService: MessagesService,
+              private router: Router
+              ) { }
 
   ngOnInit() {
     this.categoryForm = this.fb.group({
@@ -24,26 +31,21 @@ export class CategoryComponent implements OnInit {
 
   saveCategory() {
     this.categoryservice.createCategory(this.category)
-      .subscribe(() => `The Category has been saved`,
+      .subscribe(() => this.onSaveComplete(`The new ${this.category.name} was saved`),
         (error: any) => this.errorMessage = error
       );
   }
 
-  // getCategory() {
-  //   this.categoryservice.getCategories().subscribe((data: any) => {
-  //     console.log(data);
-  //     this.categories = data;
-  //     }, (error) => {
-  //       console.log(error);
-  //     });
-  // }
+  onSaveComplete(message?: string): void {
+    if (message) {
+      this.messageService.addMessage(message);
+    }
 
-  onSubmit() {
-    console.log(this.categoryForm);
-    console.log('Saved: ' + JSON.stringify(this.categoryForm.value));
-    alert(`The Categoty has been saved.`);
-    this.categoryForm.reset();
+    // Navigate back to the Creating Category
+    this.router.navigateByUrl('/creating_category');
+    // this.categoryForm.reset();
   }
+
 }
 
 
