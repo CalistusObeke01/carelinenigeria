@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.skinLabProducts = [
-      {product: 'Cleaners',  routerLink: 'products/cleanser'},
+      {product: 'Cleansers',  routerLink: 'products/cleansers'},
       {product: 'Wax Strips',  routerLink: 'products/wax-strips'},
       {product: 'Sunblock',  routerLink: 'products/sunblock'},
       {product: 'CC Cream',  routerLink: 'products/cc-cream'},

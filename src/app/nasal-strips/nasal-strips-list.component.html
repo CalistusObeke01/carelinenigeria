@@ -1,19 +1,21 @@
-<div id="bg-image" [ngClass]= "'tb-padding'">
-    <div class="container" *ngFor="let product of filteredProducts">
-      <div class="row">
-        <div class="col-md-4">
-          <img class="img-fluid" style="max-width: 100%; height: auto;" [src]="product.imageUrl" alt="{{product.productTitle}}">
-        </div>
-        <div class="col-md-8">
-          <h3>{{product.productTitle}}</h3>
-          <p>
-            {{product.description}}
-          </p>
-          <ul *ngFor=" let detail of details">
-            <li>{{detail}}</li>
-          </ul>
-          <p class="text-right ts" style="margin-top: 5em; font-weight: bold;">{{product.notice}}</p>
-        </div>
+<div id="bg-image">
+  <div class="container" *ngFor="let product of filteredProducts">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-fluid" style="max-width: 100%; height: auto;" [src]="product.imageUrl" alt="{{product.title}}">
+      </div>
+      <div class="col-md-8">
+        <h3>{{product.title}}</h3>
+        <p>
+          {{product.description}}
+        </p>
+        <ul *ngFor=" let detail of details">
+          <li>{{detail}}</li>
+        </ul>
+        <p class="text-right ts" style="margin-top: 5em; font-weight: bold;">{{product.notice}}</p>
       </div>
     </div>
   </div>
+</div>
+
+  

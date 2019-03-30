@@ -25,6 +25,12 @@ import { DeepCleansingStripsModule } from './deep-cleansing-strips/deep-cleansin
 import { NasalStripsModule } from './nasal-strips/nasal-strips.module';
 import { AccessModule } from './access/access.module';
 import { MessagesModule } from './messages/messages.module';
+import { CleansersModule } from './cleanser/cleansers.module';
+import { WaxStripsModule } from './wax-strip/wax-strips.module';
+import { CcCreamsModule } from './cc-cream/cc-creams.module';
+import { SunblocksModule } from './sunblock/sunblocks.module';
+import { BabyProductsModule } from './baby-product/baby-products.module';
+import { GloveModule } from './glove/glove.module';
 
 
 @NgModule({
@@ -53,7 +59,13 @@ import { MessagesModule } from './messages/messages.module';
     NasalStripsModule,
     AccessModule,
     MessagesModule,
-    AppRoutingModule,
+    CleansersModule,
+    WaxStripsModule,
+    CcCreamsModule,
+    SunblocksModule,
+    BabyProductsModule,
+    GloveModule,
+    AppRoutingModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [Title],

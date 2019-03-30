@@ -1,10 +1,8 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { DeepCleansingStrips } from './deep-cleansing-strips';
+
 
 @Injectable({
   providedIn: 'root'

@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   ];
   slides: any = [[]];
   chunk(arr, chunkSize) {
-    let R = [];
+    const R = [];
     for (let i = 0, len = arr.length; i < len; i += chunkSize) {
       R.push(arr.slice(i, i + chunkSize));
     }

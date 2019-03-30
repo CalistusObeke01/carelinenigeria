@@ -10,7 +10,7 @@ import { HaircareService } from './haircare.service';
 })
 export class HaircareListComponent implements OnInit {
   pageTitle = 'Haircare Treatment';
-  imageWidth = 150;
+  imageWidth = 220;
   imageMargin = 2;
   errorMessage = '';
 
@@ -29,23 +29,20 @@ export class HaircareListComponent implements OnInit {
   constructor(private haircareService: HaircareService,
               private titleService: Title,
               ) { }
+
   ngOnInit(): void {
     this.showHaircareProducts();
-    this.titleService.setTitle(this.pageTitle);
   }
 
-  public setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
-  }
 
   showHaircareProducts() {
-      this.haircareService.getHaircareProducts(`haircare`).subscribe(
-        haircareProducts => {
-          this.haircareProducts = haircareProducts;
-          this.filteredHaircareProducts = this.performFilter(this.listFilter);
-        },
-        error => this.errorMessage = error as any
-      );
+    this.haircareService.getHaircareProducts(`haircare`).subscribe(
+      haircareProducts => {
+        this.haircareProducts = haircareProducts;
+        this.filteredHaircareProducts = this.performFilter(this.listFilter);
+      },
+      error => console.warn(error)
+    );
   }
   performFilter(filterBy: string): Haircare[] {
     filterBy = filterBy.toLocaleLowerCase();

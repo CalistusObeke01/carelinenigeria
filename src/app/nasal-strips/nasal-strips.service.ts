@@ -9,13 +9,12 @@ import { NasalStrips } from './nasal-strips';
   providedIn: 'root'
 })
 export class NasalStripsService {
-  private uri = 'api/nasalStripsProducts';
-  private baseUrl = './assets/nasalstrip-data.json';
+  url = `http://carelinenigeria.herokuapp.com/products`;
 
   constructor(private http: HttpClient) { }
 
-  getProducts() {
-    return this.http.get<NasalStrips[]>(this.uri)
+  getProducts(catCode: string) {
+    return this.http.get<NasalStrips[]>(`${this.url}/${catCode}`)
       .pipe(
         tap(data => console.log(JSON.stringify(data))),
         catchError(this.handleError)
