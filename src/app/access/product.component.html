@@ -11,8 +11,8 @@
           <select formControlName="category" class="form-control" id="category"
           [ngClass]="{'is-invalid': (productForm.get('category').touched || productForm.get('category').dirty) && !productForm.get('category').valid }"
         required>
-            <option>1</option>
-            <option>2</option>
+            <option [ngValue]="null">-- Select Category --</option>
+            <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.name}}</option>
           </select>
           <span class="h3 invalid-feedback">
             <span *ngIf= "!!productForm.get('category').errors?.required">
@@ -35,12 +35,12 @@
           <!-- Subtitle -->
         <div class="form-group">
           <label class="col-md-4">Subtitle</label>
-          <input type="text" formControlName="subtitle" class="form-control" name="subtitle"/>
+          <input type="text" formControlName="subtitle" class="form-control"/>
         </div>
           <!-- Price -->
         <div class="form-group">
-          <label formControlName="price" class="col-md-4">Price</label>
-          <input type="text" class="form-control" name="price"/>
+          <label class="col-md-4">Price</label>
+          <input type="text" class="form-control" formControlName="price"/>
         </div>
           <!-- Description -->
         <div class="form-group">
@@ -57,9 +57,7 @@
         </div>
         <div class="form-group">
           <label class="col-md-4" for="image_upload">Image Upload</label>
-          <input type="file" formControlName="image_upload" class="form-control-file" id="image_upload"
-          [ngClass]="{'is-invalid': (productForm.get('image_upload').touched || productForm.get('image_upload').dirty) && !productForm.get('image_upload').valid }"
-        required>
+          <input type="file" formControlName="image_upload" class="form-control-file" (change)="getImages($event.target.files)" multiple>
         <span class="h3 invalid-feedback">
           <span *ngIf= "!!productForm.get('image_upload').errors?.required">
             <i class="fa fa-info-circle"></i> Image is required.

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from './product.service';
 import { Product } from './IProduct';
+import { CategoryService } from './category.service';
+import { Category } from './ICategory';
 @Component({
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
@@ -9,19 +11,32 @@ import { Product } from './IProduct';
 export class ProductComponent implements OnInit {
   productForm: FormGroup;
   products: Product[] = [];
+  categories: Array<Category> = [];
+  files: Array<File> = [];
 
-  constructor(private fb: FormBuilder, private productservice: ProductService) { }
+  constructor(private fb: FormBuilder, private productservice: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.getAllCategories();
     this.productForm = this.fb.group({
-      category: ['', Validators.required],
+      category: [null, [Validators.required]],
       title: ['', Validators.required],
       subtitle: [''],
       price: [''],
       description: ['', Validators.required],
       image_upload: ['', Validators.required],
     });
-    this.getProduct();
+    // this.getProduct();
+  }
+
+  getAllCategories() {
+    this.categoryService.getCategories().subscribe((data: Category[]) => {
+      this.categories = data;
+    });
+  }
+
+  getImages($event) {
+    console.log($event);
   }
 
   getProduct() {

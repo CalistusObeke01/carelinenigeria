@@ -13,7 +13,9 @@ export class CategoryComponent implements OnInit {
   categoryForm: FormGroup;
   categories: Category[] = [];
   category: Category;
+  message: string;
   errorMessage: string;
+  isLoading = false;
 
   constructor(private fb: FormBuilder,
               private categoryservice: CategoryService,
@@ -30,10 +32,18 @@ export class CategoryComponent implements OnInit {
   }
 
   saveCategory() {
-    this.categoryservice.createCategory(this.category)
-      .subscribe(() => this.onSaveComplete(`The new ${this.category.name} was saved`),
-        (error: any) => this.errorMessage = error
-      );
+    this.isLoading = true;
+    this.category = this.categoryForm.value;
+    this.categoryservice.createCategory(this.category).subscribe((data) => {
+        if (data.id) {
+          this.categoryForm.reset();
+          this.message = 'Category created successfully';
+        }
+        this.isLoading = false;
+      }, (error: any) => {
+        this.errorMessage = error;
+        this.isLoading = false;
+       });
   }
 
   onSaveComplete(message?: string): void {
