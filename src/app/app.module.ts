@@ -31,6 +31,8 @@ import { CcCreamsModule } from './cc-cream/cc-creams.module';
 import { SunblocksModule } from './sunblock/sunblocks.module';
 import { BabyProductsModule } from './baby-product/baby-products.module';
 import { GloveModule } from './glove/glove.module';
+import {ToastrModule} from 'ngx-toastr';
+import { IndexComponent } from './public/index/index.component';
 
 
 @NgModule({
@@ -39,13 +41,19 @@ import { GloveModule } from './glove/glove.module';
     HomeComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
     SlimLoadingBarModule,
     GoTopButtonModule,
     MatTabsModule,

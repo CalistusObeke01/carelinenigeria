@@ -1,7 +1,12 @@
 <div class="container pb-5 pt-5">
   <div class="card">
     <div class="card-header">
-      <h2 class="h3-responsive font-weight-bold my-5">Creating Categories</h2>
+      <div class="d-flex justify-content-between">
+        <h2 class="h3-responsive font-weight-bold">Add Categories</h2>
+        <div class="form-group">
+          <a routerLink="/categories" class="btn btn-outline-dark btn-sm">List</a>
+        </div>
+      </div>
     </div>
     <div class="card-body">
       <form novalidate [formGroup]="categoryForm">
@@ -30,7 +35,7 @@
         <div class="form-group">
           <label class="col-md-4">Category Description</label>
           <input type="text" formControlName="description" class="form-control" id="description" name="descrription"/>
-          <small class="col-md-8" id="description" class="form-text text-muted">This field can be left blank.</small>
+          <small class="col-md-8" class="form-text text-muted">This field can be left blank.</small>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid || isLoading" (click)="saveCategory()">Create Category</button>

@@ -1,19 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found.component';
+import {IndexComponent} from './public/index/index.component';
 
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
-    data: { title: 'Home Page' }
-  },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: '', component: IndexComponent, children: [
+      {
+        path: 'home',
+        component: HomeComponent,
+        data: {title: 'Home Page'}
+      },
+      { path: '', redirectTo: 'home', pathMatch: 'full'
+      }
+    ]
   },
   {
     path: '**',
@@ -22,7 +24,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
