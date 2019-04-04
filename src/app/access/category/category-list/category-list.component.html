@@ -1,0 +1,38 @@
+<div class="container pb-5 pt-5">
+  <div class="card">
+    <div class="card-header py-2 px-3">
+      <div class="d-flex justify-content-between">
+        <h2 class="h3-responsive font-weight-bold my-2">Categories</h2>
+        <div class="form-group">
+          <a routerLink="/creating_category" class="btn btn-outline-dark btn-sm">New</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive table-responsive-sm">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Code</th>
+              <th>Name</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cat of categories; index as i">
+              <td>{{i + 1}}</td>
+              <td>{{cat.code}}</td>
+              <td>{{cat.name}}</td>
+              <td>
+                <button class="btn btn-sm m-0 btn-danger" (click)="delete(cat)">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

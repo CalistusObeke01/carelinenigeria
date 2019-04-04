@@ -1,3 +1,5 @@
+import {Category} from '../category/ICategory';
+
 export interface Product {
     id: number;
     title: string;
@@ -5,5 +7,5 @@ export interface Product {
     price: number;
     description: string;
     imageUrl: string;
-    category: string;
+    category: Category;
 }

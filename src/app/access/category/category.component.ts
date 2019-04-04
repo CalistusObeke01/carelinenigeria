@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { CategoryService } from './category.service';
-import { Category } from './ICategory';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {CategoryService} from './category.service';
+import {Category} from './ICategory';
 
-import { MessagesService } from '../messages/messages.service';
 @Component({
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
@@ -19,9 +18,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private categoryservice: CategoryService,
-              private messageService: MessagesService,
-              private router: Router
-              ) { }
+              private router: Router) { }
 
   ngOnInit() {
     this.categoryForm = this.fb.group({
@@ -38,22 +35,15 @@ export class CategoryComponent implements OnInit {
         if (data.id) {
           this.categoryForm.reset();
           this.message = 'Category created successfully';
+          setTimeout(() => {
+            this.router.navigateByUrl('/categories');
+          }, 5000);
         }
         this.isLoading = false;
       }, (error: any) => {
         this.errorMessage = error;
         this.isLoading = false;
        });
-  }
-
-  onSaveComplete(message?: string): void {
-    if (message) {
-      this.messageService.addMessage(message);
-    }
-
-    // Navigate back to the Creating Category
-    this.router.navigateByUrl('/creating_category');
-    // this.categoryForm.reset();
   }
 
 }

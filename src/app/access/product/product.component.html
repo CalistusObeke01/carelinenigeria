@@ -1,16 +1,21 @@
 <div class="container pb-5 pt-5">
   <div class="card">
     <div class="card-header">
-      <h2 class="h3-responsive font-weight-bold my-5">Creating Products</h2>
+      <div class="d-flex justify-content-between">
+        <h2 class="h3-responsive font-weight-bold">Add Product</h2>
+        <div class="form-group">
+          <a routerLink="/all-products" class="btn btn-outline-dark btn-sm">List</a>
+        </div>
+      </div>
     </div>
     <div class="card-body">
-      <form novalidate [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <form novalidate [formGroup]="productForm">
         <!-- Category -->
         <div class="form-group">
           <label class="col-md-4" for="category">Category</label>
           <select formControlName="category" class="form-control" id="category"
-          [ngClass]="{'is-invalid': (productForm.get('category').touched || productForm.get('category').dirty) && !productForm.get('category').valid }"
-        required>
+                  [ngClass]="{'is-invalid': (productForm.get('category').touched || productForm.get('category').dirty) && !productForm.get('category').valid }"
+                  required>
             <option [ngValue]="null">-- Select Category --</option>
             <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.name}}</option>
           </select>
@@ -20,35 +25,35 @@
             </span>
           </span>
         </div>
-          <!-- Title -->
+        <!-- Title -->
         <div class="form-group">
           <label class="col-md-4">Title</label>
           <input type="text" formControlName="title" class="form-control" name="title"
-          [ngClass]="{'is-invalid': (productForm.get('title').touched || productForm.get('title').dirty) && !productForm.get('title').valid }"
-        required/>
-        <span class="h3 invalid-feedback">
+                 [ngClass]="{'is-invalid': (productForm.get('title').touched || productForm.get('title').dirty) && !productForm.get('title').valid }"
+                 required/>
+          <span class="h3 invalid-feedback">
           <span *ngIf= "!!productForm.get('title').errors?.required">
             <i class="fa fa-info-circle"></i> Title is required.
           </span>
         </span>
         </div>
-          <!-- Subtitle -->
+        <!-- Subtitle -->
         <div class="form-group">
           <label class="col-md-4">Subtitle</label>
-          <input type="text" formControlName="subtitle" class="form-control"/>
+          <input type="text" formControlName="subTitle" class="form-control"/>
         </div>
-          <!-- Price -->
+        <!-- Price -->
         <div class="form-group">
           <label class="col-md-4">Price</label>
           <input type="text" class="form-control" formControlName="price"/>
         </div>
-          <!-- Description -->
+        <!-- Description -->
         <div class="form-group">
           <label class="col-md-4" for="descrription">Description</label>
           <textarea formControlName="description" class="form-control" id="descrription" rows="4"
-          [ngClass]="{'is-invalid': (productForm.get('description').touched || productForm.get('description').dirty) && !productForm.get('description').valid }"
-        required></textarea>
-        <span class="h3 invalid-feedback">
+                    [ngClass]="{'is-invalid': (productForm.get('description').touched || productForm.get('description').dirty) && !productForm.get('description').valid }"
+                    required></textarea>
+          <span class="h3 invalid-feedback">
           <span *ngIf= "!!productForm.get('description').errors?.required">
             <i class="fa fa-info-circle"></i> Description is required.
           </span>
@@ -57,27 +62,18 @@
         </div>
         <div class="form-group">
           <label class="col-md-4" for="image_upload">Image Upload</label>
-          <input type="file" formControlName="image_upload" class="form-control-file" (change)="getImages($event.target.files)" multiple>
-        <span class="h3 invalid-feedback">
+          <input type="file" class="form-control-file" id="image_upload" (change)="getImages($event.target.files)" multiple>
+          <span class="h3 invalid-feedback">
           <span *ngIf= "!!productForm.get('image_upload').errors?.required">
             <i class="fa fa-info-circle"></i> Image is required.
           </span>
         </span>
         </div>
-          <!-- Submit Button -->
+        <!-- Submit Button -->
         <div class="form-group">
-          <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Create Product</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid || isLoading" (click)="createProduct()">Create Product</button>
         </div>
       </form>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <p>
-    Form value: {{ productForm.value | json }}
-  </p>
-  <p>
-    Form Status: {{ productForm.status }}
-  </p>
 </div>

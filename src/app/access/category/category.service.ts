@@ -30,15 +30,10 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     const url = `${this.uriGetAll}`;
     return this.http.get<any>(url)
-      .pipe(
-        tap(data => console.log('getCategories: ' + JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+      .pipe(catchError(this.handleError));
   }
   createCategory(category: Category): Observable<Category> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post<Category>(`${this.uriCreate}`, category, { headers: headers })
+    return this.http.post<Category>(`${this.uriCreate}`, category)
       .pipe(
         tap(data => console.log('createCategory: ' + JSON.stringify(data))),
         catchError(this.handleError)
@@ -46,13 +41,8 @@ export class CategoryService {
   }
 
   deleteCategory(id: number): Observable<{}> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const url = `${this.uriDelete}/${id}`;
-    return this.http.delete<Category>(url, { headers: headers })
-      .pipe(
-        tap(data => console.log('deleteCategory: ' + id)),
-        catchError(this.handleError)
-      );
+    return this.http.delete<Category>(url).pipe(catchError(this.handleError));
   }
 
 
