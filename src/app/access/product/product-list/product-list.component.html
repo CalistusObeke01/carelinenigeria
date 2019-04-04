@@ -10,10 +10,12 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
+        <ng2-slim-loading-bar></ng2-slim-loading-bar>
         <table class="table table-sm">
           <thead>
           <tr>
             <th>#</th>
+            <th>Image</th>
             <th>Title</th>
             <th>Subtitle</th>
             <th>Price</th>
@@ -23,6 +25,9 @@
           <tbody>
             <tr *ngFor="let d of products; index as i">
               <td>{{i+1}}</td>
+              <td>
+                <img [src]="d.imageUrl[0]" class="img img-fluid" width="50" height="50">
+              </td>
               <td>{{d.title}}</td>
               <td>{{d.subTitle}}</td>
               <td>{{d.price}}</td>
@@ -30,7 +35,9 @@
             </tr>
           </tbody>
         </table>
-        <ng2-slim-loading-bar></ng2-slim-loading-bar>
+        <div class="alert alert-light text-center" *ngIf="products.length === 0">
+          No Product Found
+        </div>
       </div>
     </div>
   </div>

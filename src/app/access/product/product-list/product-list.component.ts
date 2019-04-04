@@ -24,7 +24,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
   getAllProducts() {
     this.loadingBar.start();
     this.productService.getAllProducts(this.paging).pipe(untilDestroyed(this)).subscribe((res: any) => {
-      // console.log(res);
       this.loadingBar.complete();
       if (res.content) {
         this.products = res.content;
