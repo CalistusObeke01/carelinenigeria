@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.navLinks = [
-      {label: 'SKINLAB', path: '/skinlab'},
+      {label: 'SKINLAB', path: 'products/skinlab'},
       {label: 'Hair care', path: '/products/haircare'},
       {label: 'Deep Cleansing Strips',  path: 'products/deep-cleansing-strips'},
       {label: 'Nasal Strips',  path: 'products/nasal-strips'},
@@ -20,9 +20,8 @@ export class HeaderComponent implements OnInit {
       {label: 'Wax Strips',  path: 'products/wax-strips'},
       {label: 'CC Cream',  path: 'products/cc-cream'},
       {label: 'Sunblock',  path: 'products/sunblock'},
-      {label: 'Baby Products', path: 'products/baby-products'},
+      {label: 'Babyline', path: 'products/babyline'},
       {label: 'Gloves',   path: 'products/powered-latex-gloves'}
     ];
   }
-
 }

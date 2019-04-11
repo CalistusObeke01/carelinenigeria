@@ -14,7 +14,7 @@ export class BabyProductsComponent implements OnInit {
   }
 
   showSunblockProducts() {
-    this.babyProductsService.getBabyProducts(`baby product`).subscribe(
+    this.babyProductsService.getBabyProducts(`babyline`).subscribe(
       (babyProducts: any) => {
         this.products = babyProducts;
       },

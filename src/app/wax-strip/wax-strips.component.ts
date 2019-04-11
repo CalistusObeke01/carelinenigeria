@@ -15,7 +15,7 @@ export class WaxStripsComponent implements OnInit {
   }
 
   showWaxstripProducts() {
-    this.waxStripsService.getWaxstripsProducts(`wax strips`).subscribe(
+    this.waxStripsService.getWaxstripsProducts(`wax`).subscribe(
       (waxstripsProducts: any) => {
         this.products = waxstripsProducts;
       },

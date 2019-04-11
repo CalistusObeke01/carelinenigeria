@@ -5,7 +5,7 @@ import { BabyProductsComponent } from './baby-products.component';
 
 const routes: Routes = [
   {
-    path: 'products/baby-products',
+    path: 'products/babyline',
     component: BabyProductsComponent
   }
 ];

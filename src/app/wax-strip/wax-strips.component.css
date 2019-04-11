@@ -1,0 +1,22 @@
+#ty:nth-of-type(even) {
+    background-color: grey;
+}
+
+/* 
+div>.skip-bgc:nth-of-type(2n) {
+    background-color: grey;
+} */
+
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: #e2e2e2; /* old IE */
+    background-color: #e2e2e2; /* Modern Browsers */
+}
+
+.txt-align-middle {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}

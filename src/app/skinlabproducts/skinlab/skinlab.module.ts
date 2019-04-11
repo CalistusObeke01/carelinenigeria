@@ -6,7 +6,7 @@ import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
   {
-    path: 'skinlab',
+    path: 'products/skinlab',
     component: SkinlabComponent
   }
 ];

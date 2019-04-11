@@ -16,7 +16,7 @@ export class CcCreamsComponent implements OnInit {
 
 
   showCcCreamsProducts() {
-    this.ccCreamsService.getCcCreamsProducts(`cc cream`).subscribe(
+    this.ccCreamsService.getCcCreamsProducts(`cccream`).subscribe(
       (ccCreamProducts: any) => {
         this.products = ccCreamProducts;
       },

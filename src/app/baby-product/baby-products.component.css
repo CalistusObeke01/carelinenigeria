@@ -1,0 +1,13 @@
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: #e2e2e2; /* old IE */
+    background-color: #e2e2e2; /* Modern Browsers */
+}
+
+.txt-align-middle {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}

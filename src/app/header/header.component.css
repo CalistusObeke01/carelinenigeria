@@ -38,3 +38,13 @@ nav> a:hover {
 #a-hover:active {
     color:#9C27B0;   
 }
+
+link > ul > li > a {
+    color :#fff;
+    background-color: #9C27B0;
+    text-decoration: none;
+}
+
+.ab > a:hover {
+    color: #9C27B0;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 import { Haircare } from './haircare';
 import { HaircareService } from './haircare.service';
 
@@ -9,10 +9,11 @@ import { HaircareService } from './haircare.service';
   styleUrls: ['./haircare-list.component.css']
 })
 export class HaircareListComponent implements OnInit {
-  pageTitle = 'Haircare Treatment';
+  title = 'Haircare';
   imageWidth = 220;
   imageMargin = 2;
   errorMessage = '';
+
 
   ListFilter = '';
   get listFilter(): string {
@@ -26,14 +27,11 @@ export class HaircareListComponent implements OnInit {
   filteredHaircareProducts: Haircare[] = [];
   haircareProducts: Haircare[] = [];
 
-  constructor(private haircareService: HaircareService,
-              private titleService: Title,
-              ) { }
+  constructor(private haircareService: HaircareService) { }
 
   ngOnInit(): void {
     this.showHaircareProducts();
   }
-
 
   showHaircareProducts() {
     this.haircareService.getHaircareProducts(`haircare`).subscribe(

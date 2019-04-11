@@ -1,0 +1,19 @@
+<div style="background-color: purple">
+  <div class="container pb-5" *ngFor="let product of products">
+      <div class="row pt-5 pb-5">
+        <div class="col-md-4">
+          <img class="img-fluid"  [src]="product.imageUrl" alt="{{product.title}}">
+        </div>
+        <div class="col-md-8 txt-align-middle">
+          <h3>{{product.title}}</h3>
+          <h5 style="font-weight: bold;">{{product.subTitle}}</h5>
+          <p>
+            {{product.description}}
+          </p>
+          <p class="font-weight-normal"><strong>{{product.price | currency:"#":"symbol":"1.2-2"}}</strong></p>
+        </div>
+      </div>
+      <hr class="w-100 clearfix">
+  </div>
+</div>
+

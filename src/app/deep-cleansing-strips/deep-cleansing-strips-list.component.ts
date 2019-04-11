@@ -7,7 +7,6 @@ import { DeepCleansingStripsService } from './deep-cleansing-strips.service';
   styleUrls: ['./deep-cleansing-strips-list.component.css']
 })
 export class DeepCleansingStripsListComponent implements OnInit {
-  errorMessage = '';
   products: DeepCleansingStrips[] = [];
 
   constructor(private deepcleansingservice: DeepCleansingStripsService) { }
@@ -17,7 +16,7 @@ export class DeepCleansingStripsListComponent implements OnInit {
   }
 
   getListData() {
-    this.deepcleansingservice.getProducts(`haircare`).subscribe((data: any) => {
+    this.deepcleansingservice.getProducts(`deepcleansing`).subscribe((data: any) => {
       console.log(data);
       this.products = data;
       }, (error) => {

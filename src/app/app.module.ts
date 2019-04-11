@@ -1,4 +1,4 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -33,6 +33,17 @@ import { BabyProductsModule } from './baby-product/baby-products.module';
 import { GloveModule } from './glove/glove.module';
 import {ToastrModule} from 'ngx-toastr';
 import { IndexComponent } from './public/index/index.component';
+import { PerfumesModule } from './perfume/perfumes.module';
+import { SheaButtersModule } from './organics/shea-butter/shea-butters.module';
+import { CocoaButterModule } from './organics/cocoa-butter/cocoa-butter.module';
+import { SheaCocoaButterModule } from './organics/shea-cocoa-butter/shea-cocoa-butter.module';
+import { FaceScrubsModule } from './organics/face-scrub/face-scrubs.module';
+import { FaceMasksModule } from './organics/face-mask/face-masks.module';
+import { JamaicanCastorOilModule } from './organics/jamaican-castor-oil/jamaican-castor-oil.module';
+import { ArganOilModule } from './organics/argan-oil/argan-oil.module';
+import { JojobaOilModule } from './organics/jojoba-oil/jojoba-oil.module';
+import { SweetAlmondOilModule } from './organics/sweet-almond-oil/sweet-almond-oil.module';
+import { TeaTreeOilModule } from './organics/tea-tree-oil/tea-tree-oil.module';
 
 
 @NgModule({
@@ -73,6 +84,17 @@ import { IndexComponent } from './public/index/index.component';
     SunblocksModule,
     BabyProductsModule,
     GloveModule,
+    PerfumesModule,
+    SheaButtersModule,
+    CocoaButterModule,
+    SheaCocoaButterModule,
+    FaceScrubsModule,
+    FaceMasksModule,
+    JamaicanCastorOilModule,
+    ArganOilModule,
+    JojobaOilModule,
+    SweetAlmondOilModule,
+    TeaTreeOilModule,
     AppRoutingModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

@@ -6,4 +6,3 @@ export interface BabyProduct {
     imageUrl: string;
     price: number;
 }
-

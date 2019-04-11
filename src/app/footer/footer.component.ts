@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
       {product: 'Haircare',  routerLink: '/products/haircare'},
       {product: 'Deep Cleansing Strips',  routerLink: 'products/deep-cleansing-strips'},
       {product: 'Nasal Strips',  routerLink: 'products/nasal-strips'},
-      {product: 'Baby Products', routerLink: 'products/baby-products'},
+      {product: 'Babyline', routerLink: 'products/babyline'},
       {product: 'Gloves', routerLink: 'products/powered-latex-gloves'}
     ];
   }

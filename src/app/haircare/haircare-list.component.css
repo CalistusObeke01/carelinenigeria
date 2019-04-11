@@ -2,22 +2,6 @@
     margin-top: 65px;
 }
 
-hr {
-    display: block;
-    position: relative;
-    padding: 0;
-    margin: 8px auto;
-    height: 0;
-    width: 100%;
-    max-height: 0;
-    font-size: 1px;
-    line-height: 0;
-    clear: both;
-    border: none;
-    border-top: 1px solid #aaaaaa;
-    border-bottom: 1px solid #aaaaaa;
-}
-
 #a-product{
     color: #fff !important;
     text-shadow: 2px 2px 4px #000000;
@@ -33,4 +17,18 @@ hr {
     background-image: linear-gradient(to right,#7f8c8d,#eee,#7f8c8d);
     background-size: 800px 100%;
     background-position: 50% 100%; 
+}
+
+hr {
+    border: none;
+    height: 2px;
+    /* Set the hr color */
+    color: #e2e2e2; /* old IE */
+    background-color: #e2e2e2; /* Modern Browsers */
+}
+
+.txt-align-middle {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
 }

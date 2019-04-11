@@ -12,3 +12,7 @@ hr {
     flex-direction: column; 
     justify-content: center; 
 }
+
+hr:nth-last-child(6) {
+    display: none;
+}

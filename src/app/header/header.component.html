@@ -4,12 +4,12 @@
   </logo> 
   <links>
       <ul class="navbar-nav mr-auto" style="margin: 0 auto">
-          <li class="nav-item active waves-light" mdbWavesEffect>
+          <li class="nav-item waves-light" mdbWavesEffect>
               <a [routerLink]="['/home']" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item waves-light" mdbWavesEffect>
+          <!-- <li class="nav-item waves-light" mdbWavesEffect>
               <a [routerLink]="['/']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">Products</a>
-          </li>
+          </li> -->
           <li class="nav-item waves-light" mdbWavesEffect>
               <a [routerLink]="['/about']" class="nav-link text-uppercase font-weight-bold" routerLinkActive="active">About</a>
           </li>
@@ -21,10 +21,10 @@
           </li>
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
+      <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
       <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item waves-light" mdbWavesEffect>
               <a href="tel: +234 809 066 6043" class="nav-link"><i class="fa fa-phone"></i></a>
@@ -41,15 +41,36 @@
       </ul>
   </links>
 </mdb-navbar>
-<nav mat-tab-nav-bar style="margin-top: 80px;">
-    <a mat-tab-link id="a-hover"
-       *ngFor="let link of navLinks"
-       [routerLink]="link.path"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive">
-      {{link.label}}
-    </a>
-</nav>
 
+<div class="pt-5 mt-4"></div>
+<mdb-navbar SideClass="navbar navbar-expand-md navbar-light white  scrolling-navbar ie-nav" [containerInside]="false">
+    <logo>
+      <a class="nav-link"><i class="fa fa-product-hunt" aria-hidden="true"></i></a> 
+    </logo> 
+    <links>
+        <ul class="navbar-nav" style="margin: 0 auto">
+            <li class="nav-item waves-light ab" mdbWavesEffect  *ngFor="let navLink of navLinks">
+                <a routerLink= "{{navLink.path}}" class="nav-link text-uppercase" routerLinkActive="active">{{navLink.label}}</a>
+            </li>
 
-
+            <!-- Dropdown -->
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light text-uppercase" mdbWavesEffect>
+                Organics<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/shea-butters']" routerLinkActive="active">Shea Butter</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/cocoa-butter']" routerLinkActive="active">Cocoa Butter</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/shea-cocoa-butters']" routerLinkActive="active">Shea Cocoa Butter</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/face-scrubs']" routerLinkActive="active">Face Scrubs</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/face-masks']" routerLinkActive="active">Face Masks</a>
+                    <div class="divider dropdown-divider"></div>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/jamaican-castor-oil']" routerLinkActive="active">Jamaican Castor Oil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/argan-oil']" routerLinkActive="active">Argan Oil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/jojoba-oil']" routerLinkActive="active">Jojoba Oil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/sweet-almond-oil']" routerLinkActive="active">Sweet Almond Oil</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['products/tea-tree-oil']" routerLinkActive="active">Tea Tree Oil</a>
+                </div>
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>

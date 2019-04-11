@@ -10,11 +10,37 @@ const routes: Routes = [
     path: '', component: IndexComponent, children: [
       {
         path: 'home',
-        component: HomeComponent,
-        data: {title: 'Home Page'}
+        component: HomeComponent
       },
-      { path: '', redirectTo: 'home', pathMatch: 'full'
-      }
+      {
+        path: '', redirectTo: 'home', pathMatch: 'full'
+      },
+      {path: 'products/babyline', loadChildren: './baby-product/baby-products.module#BabyProductsModule'},
+      {path: 'products/cc-cream', loadChildren: './cc-cream/cc-creams.module#CcCreamsModule'},
+      {path: 'products/cleansers', loadChildren: './cleanser/cleansers.module#CleansersModule'},
+      {path: 'contact', loadChildren: './contact/contact.module#ContactModule'},
+      { path: 'products/deep-cleansing-strips',
+        loadChildren: './deep-cleansing-strips/deep-cleansing-strips.module#DeepCleansingStripsModule'},
+      {path: 'products/glove', loadChildren: './glove/glove.module#GloveModule'},
+      {path: 'products/haircare', loadChildren: './haircare/haircare.module#HaircareModule'},
+      {path: 'products/nasal-strips', loadChildren: './nasal-strips/nasal-strips.module#NasalStripsModule'},
+      {path: 'products/skinlab', loadChildren: './skinlabproducts/skinlab/skinlab.module#SkinlabModule'},
+      {path: 'products/sunblock', loadChildren: './sunblock/sunblocks.module#SunblocksModule'},
+      {path: 'testimonial', loadChildren: './testimonial/testimonial.module#TestimonialModule'},
+      {path: 'products/wax-strips', loadChildren: './wax-strip/wax-strips.module#WaxStripsModule'},
+      {path: 'about', loadChildren: './about/about.module#AboutModule'},
+      {path: 'products/argan-oil', loadChildren: './organics/argan-oil/argan-oil.module#ArganOilModule'},
+      {path: 'products/cocoa-butter', loadChildren: './organics/cocoa-butter/cocoa-butter.module#CocoaButterModule'},
+      {path: 'products/face-masks', loadChildren: './organics/face-mask/face-masks.module#FaceMasksModule'},
+      {path: 'products/face-scrubs', loadChildren: './organics/face-scrub/face-scrubs.module#FaceScrubsModule'},
+      { path: 'products/jamaican-castor-oil',
+        loadChildren: './organics/jamaican-castor-oil/jamaican-castor-oil.module#JamaicanCastorOilModule'},
+      {path: 'products/jojoba-oil', loadChildren: './organics/jojoba-oil/jojoba-oil.module#JojobaOilModule'},
+      {path: 'products/shea-butters', loadChildren: './organics/shea-butter/shea-butters.module#SheaButtersModule'},
+      {path: 'products/shea-cocoa-butters', loadChildren: './organics/shea-cocoa-butter/shea-cocoa-butter.module#SheaCocoaButterModule'},
+      {path: 'products/sweet-almond-oil', loadChildren: './organics/sweet-almond-oil/sweet-almond-oil.module#SweetAlmondOilModule'},
+      {path: 'products/tea-tree-oil', loadChildren: './organics/tea-tree-oil/tea-tree-oil.module#TeaTreeOilModule'},
+      {path: 'products/perfumes', loadChildren: './perfume/perfumes.module#PerfumesModule'},
     ]
   },
   {
@@ -24,7 +50,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false, scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

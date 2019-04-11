@@ -3,7 +3,7 @@ import {Category} from '../ICategory';
 import {ActivatedRoute} from '@angular/router';
 import {untilDestroyed} from 'ngx-take-until-destroy';
 import {CategoryService} from '../category.service';
-import {ToastrService} from "ngx-toastr";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'cn-category-list',

@@ -15,7 +15,7 @@ export class GloveComponent implements OnInit {
   }
 
   showGloveProducts() {
-    this.gloveService.getGloveProducts(`glove`).subscribe(
+    this.gloveService.getGloveProducts(`gloves`).subscribe(
       (gloveProducts: any) => {
         this.products = gloveProducts;
       },

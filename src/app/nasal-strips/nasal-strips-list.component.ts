@@ -7,7 +7,7 @@ import { NasalStripsService } from './nasal-strips.service';
   styleUrls: ['./nasal-strips-list.component.css']
 })
 export class NasalStripsListComponent implements OnInit {
-  filteredProducts: NasalStrips[] = [];
+  products: NasalStrips[] = [];
   details: Array<any> = [];
   constructor(private nasalservice: NasalStripsService) { }
 
@@ -23,11 +23,11 @@ export class NasalStripsListComponent implements OnInit {
   }
 
   showProduct() {
-    this.nasalservice.getProducts(`nasal strips`).subscribe(
-      products => {
-        this.filteredProducts = products;
-      },
-      error => console.warn(error)
-    );
+    this.nasalservice.getProducts(`nasal`).subscribe((data: any) => {
+      console.log(data);
+      this.products = data;
+      }, (error) => {
+        console.error(error);
+      });
   }
 }
