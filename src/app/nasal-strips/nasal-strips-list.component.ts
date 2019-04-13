@@ -9,6 +9,7 @@ import { NasalStripsService } from './nasal-strips.service';
 export class NasalStripsListComponent implements OnInit {
   products: NasalStrips[] = [];
   details: Array<any> = [];
+  notice: string;
   constructor(private nasalservice: NasalStripsService) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class NasalStripsListComponent implements OnInit {
       'Available in sizes for ideal performance',
       'Transparent in texture and elegant in design'
     ];
+    this.notice = 'Always wash face and dry before applying.';
   }
 
   showProduct() {

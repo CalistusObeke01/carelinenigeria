@@ -10,7 +10,7 @@ import { HaircareService } from './haircare.service';
 })
 export class HaircareListComponent implements OnInit {
   title = 'Haircare';
-  imageWidth = 220;
+  imageWidth = 120;
   imageMargin = 2;
   errorMessage = '';
 

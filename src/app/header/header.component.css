@@ -48,3 +48,9 @@ link > ul > li > a {
 .ab > a:hover {
     color: #9C27B0;
 }
+
+.dropdown-item.active, 
+.dropdown-item:active {
+    background-color: #9C27B0;
+    color :#fff;
+}

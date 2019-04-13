@@ -1,6 +1,6 @@
 <div id="bg-image">
-  <div class="container" *ngFor="let product of filteredProducts">
-    <div class="row">
+  <div class="container pb-5" *ngFor="let product of products">
+    <div class="row pt-5 pb-5">
       <div class="col-md-4">
         <img class="img-fluid" style="max-width: 100%; height: auto;" [src]="product.imageUrl" alt="{{product.title}}">
       </div>
@@ -12,7 +12,7 @@
         <ul *ngFor=" let detail of details">
           <li>{{detail}}</li>
         </ul>
-        <p class="text-right ts" style="margin-top: 5em; font-weight: bold;">{{product.notice}}</p>
+        <p class="text-right" style="margin-top: 5em; font-weight: bold;">{{notice}}</p>
       </div>
     </div>
   </div>

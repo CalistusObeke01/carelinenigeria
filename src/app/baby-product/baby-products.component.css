@@ -11,3 +11,7 @@ hr {
     flex-direction: column; 
     justify-content: center; 
 }
+
+div:last-of-type hr {
+    display: none;
+}

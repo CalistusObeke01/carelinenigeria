@@ -3,7 +3,7 @@
     <div class="col-md-4">
       <!-- mat-card for image -->
       <!-- <mat-card> -->
-        <img class="img-fluid"  [src]="product.imageUrl" alt="{{product.title}}">
+        <img class="img-fluid" width="250px" [src]="product.imageUrl" alt="{{product.title}}">
       <!-- </mat-card> -->
       <!-- mat-card for image -->
     </div>
@@ -13,7 +13,7 @@
       <p>
         {{product.description}}
       </p>
-      <p class="font-weight-normal"><strong>{{product.price | currency:"# ":"symbol":"1.2-2"}}</strong></p>
+      <p class="font-weight-normal"><strong>{{product.price | currency:"&#8358; ":"symbol":"1.2-2"}}</strong></p>
       <ul *ngIf="product.title === 'Natural Deep Cleansing'" [ngClass]="'ul-align'">
           <li>Enriched with Vitamin A and Almond Oil for skincare</li>
           <li>Removes Dirt, Grease, and Bacteria</li>

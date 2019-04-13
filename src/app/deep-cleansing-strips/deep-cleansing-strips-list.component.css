@@ -13,6 +13,6 @@ hr {
     justify-content: center; 
 }
 
-hr:nth-last-child(6) {
+div:last-of-type hr {
     display: none;
 }
