@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Perfume } from './IPerfume';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Perfume} from './IPerfume';
+import {ENV} from '../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerfumesService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
-  constructor(private http: HttpClient) { }
+  url = `${ENV.BASE_API}/products`;
+
+  constructor(private http: HttpClient) {
+  }
 
   getPerfumes(catCode: string) {
     return this.http.get<Perfume[]>(`${this.url}/${catCode}`)

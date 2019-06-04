@@ -5,7 +5,7 @@ import { JojobaOilComponent } from './jojoba-oil.component';
 
 const routes: Routes = [
   {
-    path: 'products/jojoba-oil',
+    path: '',
     component: JojobaOilComponent
   }
 ];

@@ -1,19 +1,20 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
-import {catchError, tap, map} from 'rxjs/operators';
+import {catchError, tap} from 'rxjs/operators';
 import {Product} from './IProduct';
+import {ENV} from '../../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  uri = `http://carelinenigeria.herokuapp.com/products`;
-  uriUpdate = `http://carelinenigeria.herokuapp.com/products/update`;
-  uriDelete = `http://carelinenigeria.herokuapp.com/products/categories/delete`;
-  uriGetOne = `http://carelinenigeria.herokuapp.com/products/findById`;
-  uriGetByCategory = `http://carelinenigeria.herokuapp.com/products`;
-  uriGetAllProducts = `http://carelinenigeria.herokuapp.com/products`;
+  uri = `${ENV.BASE_API}/products`;
+  uriUpdate = `${ENV.BASE_API}/products/update`;
+  uriDelete = `${ENV.BASE_API}/products/categories/delete`;
+  uriGetOne = `${ENV.BASE_API}/products/findById`;
+  uriGetByCategory = `${ENV.BASE_API}/products`;
+  uriGetAllProducts = `${ENV.BASE_API}/products`;
 
   constructor(private http: HttpClient) {
   }
@@ -44,7 +45,7 @@ export class ProductService {
   }
 
   createProduct(product: Product, file: File[]): Observable<Product> {
-    let formData = new FormData();
+    const formData = new FormData();
     if (file.length > 0) {
       let i;
       for (i = 0; i < file.length; i++) {
@@ -72,7 +73,7 @@ export class ProductService {
   deleteProduct(id: number): Observable<{}> {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     const url = `${this.uriDelete}/${id}`;
-    return this.http.delete<Product>(url, {headers: headers})
+    return this.http.delete<Product>(url, {headers})
       .pipe(
         tap(data => console.log('deleteProduct: ' + id)),
         catchError(this.handleError)

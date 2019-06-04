@@ -5,7 +5,7 @@ import { GloveComponent } from './glove.component';
 
 const routes: Routes = [
   {
-    path: 'products/powered-latex-gloves',
+    path: '',
     component: GloveComponent
   }
 ];

@@ -5,7 +5,7 @@ import { FaceMasksComponent } from './face-masks.component';
 
 const routes: Routes = [
   {
-    path: 'products/face-masks',
+    path: '',
     component: FaceMasksComponent
   }
 ];

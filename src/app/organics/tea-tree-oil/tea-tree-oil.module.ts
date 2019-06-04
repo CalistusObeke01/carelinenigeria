@@ -5,7 +5,7 @@ import { TeaTreeOilComponent } from './tea-tree-oil.component';
 
 const routes: Routes = [
   {
-    path: 'products/tea-tree-oil',
+    path: '',
     component: TeaTreeOilComponent
   }
 ];

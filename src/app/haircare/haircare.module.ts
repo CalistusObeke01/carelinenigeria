@@ -9,13 +9,13 @@ import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: '',
     children: [
       {
-        path: 'haircare', component: HaircareListComponent, data : { title : 'Haircare Treatment'}
+        path: '', component: HaircareListComponent, data : { title : 'Haircare Treatment'}
       },
       {
-        path: 'haircare/:id', component: HaircareDetailComponent
+        path: ':id', component: HaircareDetailComponent
       }
     ]
   }

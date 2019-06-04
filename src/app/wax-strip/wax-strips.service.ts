@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Waxstrip } from './IWaxstrip';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Waxstrip} from './IWaxstrip';
+import {ENV} from '../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WaxStripsService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
+  url = `${ENV.BASE_API}/products`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getWaxstripsProducts(catCode: string) {
     return this.http.get<Waxstrip[]>(`${this.url}/${catCode}`)

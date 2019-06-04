@@ -5,7 +5,7 @@ import { SunblocksComponent } from './sunblocks.component';
 
 const routes: Routes = [
   {
-    path: 'products/sunblock',
+    path: '',
     component: SunblocksComponent
   }
 ];

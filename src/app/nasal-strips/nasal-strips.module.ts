@@ -5,8 +5,7 @@ import { NasalStripsListComponent } from './nasal-strips-list.component';
 
 const routes: Routes = [
   {
-    path: 'products/nasal-strips',
-    component: NasalStripsListComponent
+    path: '', component: NasalStripsListComponent
   }
 ];
 

@@ -5,7 +5,7 @@ import { CleansersComponent } from './cleansers.component';
 
 const routes: Routes = [
   {
-    path: 'products/cleansers',
+    path: '',
     component: CleansersComponent
   }
 ];

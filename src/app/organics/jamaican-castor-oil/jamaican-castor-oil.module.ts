@@ -5,7 +5,7 @@ import { JamaicanCastorOilComponent } from './jamaican-castor-oil.component';
 
 const routes: Routes = [
   {
-    path: 'products/jamaican-castor-oil',
+    path: '',
     component: JamaicanCastorOilComponent
   }
 ];

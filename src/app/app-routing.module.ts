@@ -4,17 +4,14 @@ import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {IndexComponent} from './public/index/index.component';
 
-
 const routes: Routes = [
-  {
-    path: '', component: IndexComponent, children: [
-      {
-        path: 'home',
-        component: HomeComponent
+  {path: 'careline', children: [
+      {path: '', component: IndexComponent, children: [
+          {path: '', redirectTo: 'home', pathMatch: 'full'},
+          {path: 'home', component: HomeComponent},
+        ]
       },
-      {
-        path: '', redirectTo: 'home', pathMatch: 'full'
-      },
+      {path: 'access', loadChildren: './access/access.module#AccessModule'},
       {path: 'products/babyline', loadChildren: './baby-product/baby-products.module#BabyProductsModule'},
       {path: 'products/cc-cream', loadChildren: './cc-cream/cc-creams.module#CcCreamsModule'},
       {path: 'products/cleansers', loadChildren: './cleanser/cleansers.module#CleansersModule'},
@@ -41,7 +38,9 @@ const routes: Routes = [
       {path: 'products/sweet-almond-oil', loadChildren: './organics/sweet-almond-oil/sweet-almond-oil.module#SweetAlmondOilModule'},
       {path: 'products/tea-tree-oil', loadChildren: './organics/tea-tree-oil/tea-tree-oil.module#TeaTreeOilModule'},
       {path: 'products/perfumes', loadChildren: './perfume/perfumes.module#PerfumesModule'},
-    ]
+    ]},
+  {
+    path: '', redirectTo: 'careline', pathMatch: 'full'
   },
   {
     path: '**',

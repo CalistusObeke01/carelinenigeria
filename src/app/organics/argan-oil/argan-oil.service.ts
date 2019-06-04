@@ -1,17 +1,20 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Organics } from '../IOrganic';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Organics} from '../IOrganic';
+import {ENV} from '../../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ArganOilService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
-  constructor(private http: HttpClient) { }
+  url = `${ENV.BASE_API}/products`;
+
+  constructor(private http: HttpClient) {
+  }
 
   getArganOils(catCode: string) {
     return this.http.get<Organics[]>(`${this.url}/${catCode}`)

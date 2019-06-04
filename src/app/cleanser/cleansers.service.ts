@@ -1,15 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Creanser } from './ICleanser';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Creanser} from './ICleanser';
+import {ENV} from '../core/config/env.config';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CleansersService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
-  constructor(private http: HttpClient) { }
+  url = `${ENV.BASE_API}/products`;
+
+  constructor(private http: HttpClient) {
+  }
 
   getCleansersProducts(catCode: string) {
     return this.http.get<Creanser[]>(`${this.url}/${catCode}`)
@@ -24,7 +28,7 @@ export class CleansersService {
       return of(this.initializeProduct());
     }
     const url = `${this.url}/${id}`;
-    return this.http.get<Creanser >(url)
+    return this.http.get<Creanser>(url)
       .pipe(
         tap(data => console.log('getHaircareProduct: ' + JSON.stringify(data))),
         catchError(this.handleError)

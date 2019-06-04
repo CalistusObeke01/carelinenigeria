@@ -5,7 +5,7 @@ import { SheaButtersComponent } from './shea-butters.component';
 
 const routes: Routes = [
   {
-    path: 'products/shea-butters',
+    path: '',
     component: SheaButtersComponent
   }
 ];

@@ -5,7 +5,7 @@ import { SweetAlmondOilComponent } from './sweet-almond-oil.component';
 
 const routes: Routes = [
   {
-    path: 'products/sweet-almond-oil',
+    path: '',
     component: SweetAlmondOilComponent
   }
 ];
