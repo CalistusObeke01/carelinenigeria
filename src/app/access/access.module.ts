@@ -16,9 +16,7 @@ const routes: Routes = [
       {
         path: 'creating_category', component: CategoryComponent
       },
-      {path: 'creating_product', component: ProductComponent, resolve: {
-          categories: CategoryResolver
-        }
+      {path: 'creating_product', component: ProductComponent
       },
       {path: 'all-products', component: ProductListComponent},
       {path: 'categories', component: CategoryListComponent, resolve: {
