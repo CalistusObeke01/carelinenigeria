@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Haircare } from './haircare';
+import {ENV} from '../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class HaircareService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
+  url = `${ENV.BASE_API}/products`;
 
   constructor(private http: HttpClient) {}
 

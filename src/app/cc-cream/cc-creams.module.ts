@@ -5,7 +5,7 @@ import { CcCreamsComponent } from './cc-creams.component';
 
 const routes: Routes = [
   {
-    path: 'products/cc-cream',
+    path: '',
     component: CcCreamsComponent
   }
 ];

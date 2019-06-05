@@ -5,7 +5,7 @@ import { ArganOilComponent } from './argan-oil.component';
 
 const routes: Routes = [
   {
-    path: 'products/argan-oil',
+    path: '',
     component: ArganOilComponent
   }
 ];

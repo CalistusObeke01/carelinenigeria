@@ -5,7 +5,7 @@ import { CocoaButterComponent } from './cocoa-butter.component';
 
 const routes: Routes = [
   {
-    path: 'products/cocoa-butter',
+    path: '',
     component: CocoaButterComponent
   }
 ];

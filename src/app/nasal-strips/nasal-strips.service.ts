@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { throwError, Observable } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
-import { NasalStrips } from './nasal-strips';
+import {throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {NasalStrips} from './nasal-strips';
+import {ENV} from '../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NasalStripsService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
+  url = `${ENV.BASE_API}/products`;
 
   constructor(private http: HttpClient) { }
 

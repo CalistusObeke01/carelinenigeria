@@ -6,7 +6,7 @@ import { TestimonialComponent } from './testimonial.component';
 
 const routes: Routes = [
   {
-    path: 'testimonial',
+    path: '',
     component: TestimonialComponent
   }
 ];

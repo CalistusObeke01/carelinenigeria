@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
-    path: 'products/deep-cleansing-strips',
+    path: '',
     component: DeepCleansingStripsListComponent
   }
 ];

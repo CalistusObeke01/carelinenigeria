@@ -12,16 +12,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.navLinks = [
-      {label: 'SKINLAB', path: 'products/skinlab'},
-      {label: 'Hair care', path: '/products/haircare'},
-      {label: 'Deep Cleansing Strips',  path: 'products/deep-cleansing-strips'},
-      {label: 'Nasal Strips',  path: 'products/nasal-strips'},
-      {label: 'Cleansers', path: 'products/cleansers'},
-      {label: 'Wax Strips',  path: 'products/wax-strips'},
-      {label: 'CC Cream',  path: 'products/cc-cream'},
-      {label: 'Sunblock',  path: 'products/sunblock'},
-      {label: 'Babyline', path: 'products/babyline'},
-      {label: 'Gloves',   path: 'products/powered-latex-gloves'}
+      {label: 'SKINLAB', path: '/careline/products/skinlab'},
+      {label: 'Hair care', path: '/careline/products/haircare'},
+      {label: 'Deep Cleansing Strips',  path: '/careline/products/deep-cleansing-strips'},
+      {label: 'Nasal Strips',  path: '/careline/products/nasal-strips'},
+      {label: 'Cleansers', path: '/careline/products/cleansers'},
+      {label: 'Wax Strips',  path: '/careline/products/wax-strips'},
+      {label: 'CC Cream',  path: '/careline/products/cc-cream'},
+      {label: 'Sunblock',  path: '/careline/products/sunblock'},
+      {label: 'Babyline', path: '/careline/products/babyline'},
+      {label: 'Gloves',   path: '/careline/products/glove'}
     ];
   }
 }

@@ -15,15 +15,15 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this.skinLabProducts = [
-      {product: 'Cleansers',  routerLink: 'products/cleansers'},
-      {product: 'Wax Strips',  routerLink: 'products/wax-strips'},
-      {product: 'Sunblock',  routerLink: 'products/sunblock'},
-      {product: 'CC Cream',  routerLink: 'products/cc-cream'},
-      {product: 'Haircare',  routerLink: '/products/haircare'},
-      {product: 'Deep Cleansing Strips',  routerLink: 'products/deep-cleansing-strips'},
-      {product: 'Nasal Strips',  routerLink: 'products/nasal-strips'},
-      {product: 'Babyline', routerLink: 'products/babyline'},
-      {product: 'Gloves', routerLink: 'products/powered-latex-gloves'}
+      {product: 'Cleansers',  routerLink: '/careline/products/cleansers'},
+      {product: 'Wax Strips',  routerLink: '/careline/products/wax-strips'},
+      {product: 'Sunblock',  routerLink: '/careline/products/sunblock'},
+      {product: 'CC Cream',  routerLink: '/careline/products/cc-cream'},
+      {product: 'Haircare',  routerLink: '/careline/products/haircare'},
+      {product: 'Deep Cleansing Strips',  routerLink: '/careline/products/deep-cleansing-strips'},
+      {product: 'Nasal Strips',  routerLink: '/careline/products/nasal-strips'},
+      {product: 'Babyline', routerLink: '/careline/products/babyline'},
+      {product: 'Gloves', routerLink: '/careline/products/powered-latex-gloves'}
     ];
   }
 

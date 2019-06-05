@@ -5,7 +5,7 @@ import { WaxStripsComponent } from './wax-strips.component';
 
 const routes: Routes = [
   {
-    path: 'products/wax-strips',
+    path: '',
     component: WaxStripsComponent
   }
 ];

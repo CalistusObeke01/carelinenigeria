@@ -1,17 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Sunblock } from './ISunblock';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Sunblock} from './ISunblock';
+import {ENV} from '../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SunblocksService {
-  url = `http://carelinenigeria.herokuapp.com/products`;
+  url = `${ENV.BASE_API}/products`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getSunblockProducts(catCode: string) {
     return this.http.get<Sunblock[]>(`${this.url}/${catCode}`)

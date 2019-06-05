@@ -1,19 +1,21 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { Category } from './ICategory';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
+import {Category} from './ICategory';
+import {ENV} from '../../core/config/env.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
-  uriCreate = `http://carelinenigeria.herokuapp.com/products/createCategory`;
-  uriGetOne = `http://carelinenigeria.herokuapp.com/products/categories`;
-  uriGetAll = `http://carelinenigeria.herokuapp.com/products/categories`;
-  uriDelete = `http://carelinenigeria.herokuapp.com/products/categories/delete`;
+  uriCreate = `${ENV.BASE_API}/products/createCategory`;
+  uriGetOne = `${ENV.BASE_API}/products/categories`;
+  uriGetAll = `${ENV.BASE_API}/products/categories`;
+  uriDelete = `${ENV.BASE_API}/products/categories/delete`;
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient) {
+  }
 
   getCategoryById(id: number): Observable<Category> {
     if (id === 0) {
@@ -32,6 +34,7 @@ export class CategoryService {
     return this.http.get<any>(url)
       .pipe(catchError(this.handleError));
   }
+
   createCategory(category: Category): Observable<Category> {
     return this.http.post<Category>(`${this.uriCreate}`, category)
       .pipe(
@@ -44,7 +47,6 @@ export class CategoryService {
     const url = `${this.uriDelete}/${id}`;
     return this.http.delete<Category>(url).pipe(catchError(this.handleError));
   }
-
 
 
   private handleError(err) {
