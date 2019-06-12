@@ -1,71 +1,94 @@
-<!-- Default form contact -->
-<div class="container">
-  <form class="text-center border border-light p-5" novalidate [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <p class="h1-responsive font-weight-bold mb-4" style="color: purple">Contact us</p>
-  
-    <!-- Name -->
-    <div>
-      <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
-        class="form-control mb-4" placeholder="Name (required)" 
-        [ngClass]="{'is-invalid': (contactForm.get('contactFormName').touched || contactForm.get('contactFormName').dirty) && !contactForm.get('contactFormName').valid }"
-        required>
+<div>
+  <!-- Default form contact -->
+  <div class="container" style="background-color: #fff">
+    <form class="text-center border border-light p-5" novalidate [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <p class="h1-responsive font-weight-bold mb-4 text-uppercase">Contact Us</p>
+      <p class="dark-grey-text pb-4">Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      <!-- Name -->
+      <div>
+        <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+          class="form-control mb-4" placeholder="Name (required)" 
+          [ngClass]="{'is-invalid': (contactForm.get('contactFormName').touched || contactForm.get('contactFormName').dirty) && !contactForm.get('contactFormName').valid }"
+          required>
+          <span class="h3 invalid-feedback">
+            <span *ngIf= "!!contactForm.get('contactFormName').errors?.required">
+              <i class="fa fa-info-circle"></i> Name is required.
+            </span>
+          </span>
+      </div>
+    
+      <!-- Email -->
+      <div>
+        <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+          class="form-control mb-4" placeholder="E-mail (required)"         
+          [ngClass]="{'is-invalid': (contactForm.get('contactFormEmail').touched || contactForm.get('contactFormEmail').dirty) && !contactForm.get('contactFormEmail').valid }"
+          required>
+          <span class="h3 invalid-feedback">
+            <span *ngIf="!!contactForm.get('contactFormEmail').errors?.required">
+              <i class="fa fa-info-circle"></i> Email is required.
+            </span>
+            <span *ngIf= "!!contactForm.get('contactFormEmail').errors?.email">
+              <i class="fa fa-info-circle"></i> Valid email address is required.
+            </span>
+          </span> 
+      </div>
+    
+      <!-- Subject -->
+      <div>
+        <label>Subject</label>
+        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4"
+        [ngClass]="{'is-invalid': (contactForm.get('contactFormSubjects').touched || contactForm.get('contactFormSubjects').dirty) && !contactForm.get('contactFormSubjects').valid }" required>
+        >
+          <option value="" disabled>Choose option (required)</option>
+          <option value="Feedback" selected>Feedback</option>
+          <option value="Make order">Make order</option>
+          <option value="Report a bug">Report a bug</option>
+        </select>
         <span class="h3 invalid-feedback">
-          <span *ngIf= "!!contactForm.get('contactFormName').errors?.required">
-            <i class="fa fa-info-circle"></i> Name is required.
+          <span *ngIf="!!contactForm.get('contactFormSubjects').errors?.required">
+            <i class="fa fa-info-circle"></i> Subject is required.
           </span>
         </span>
-    </div>
-  
-    <!-- Email -->
-    <div>
-      <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
-        class="form-control mb-4" placeholder="E-mail (required)"         
-        [ngClass]="{'is-invalid': (contactForm.get('contactFormEmail').touched || contactForm.get('contactFormEmail').dirty) && !contactForm.get('contactFormEmail').valid }"
-        required>
-        <span class="h3 invalid-feedback">
-          <span *ngIf="!!contactForm.get('contactFormEmail').errors?.required">
-            <i class="fa fa-info-circle"></i> Email is required.
+      </div>
+    
+    
+      <!-- Message -->
+      <div class="form-group">
+        <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+          rows="3" placeholder="Message (required)" 
+          [ngClass]="{'is-invalid': (contactForm.get('contactFormMessage').touched || contactForm.get('contactFormMessage').dirty) && !contactForm.get('contactFormMessage').valid }" required></textarea>
+          <span class="h3 invalid-feedback">
+            <span *ngIf="!!contactForm.get('contactFormMessage').errors?.required">
+              <i class="fa fa-info-circle"></i> Message is required.
+            </span>
           </span>
-          <span *ngIf= "!!contactForm.get('contactFormEmail').errors?.email">
-            <i class="fa fa-info-circle"></i> Valid email address is required.
-          </span>
-        </span> 
+      </div>
+    
+      <!-- Send button -->
+      <button class="py-3 btn" type="submit"  style="width: 100%; background-color: #F3E5F5" 
+      [disabled]="!contactForm.valid">SEND</button>
+    </form>
+      <!-- Default form contact -->
+
+
+
+    <div class="row py-3 mt-4 d-flex align-items-center">
+      <div class="col-md-12 col-lg-12 ml-lg-0">
+        <!--Social buttons-->
+        <h4 class="text-center pb-4">Carelinenigeria Social</h4>
+        <div class="text-center pb-5">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item"><a href="https://www.facebook.com/carelinenigeria" style="background-color: #F3E5F5; color: purple" target="_blank" class="btn-floating btn-lg rgba-white-slight mx-1"><i class="fa fa-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.instagram.com/carelinenigeria" style="background-color: #F3E5F5; color: purple" target="_blank" class="btn-floating btn-lg rgba-white-slight mx-1"><i class="fa fa-instagram"></i></a></li>                            
+                <li class="list-inline-item"><a href="https://www.twitter.com/carelinenig" style="background-color: #F3E5F5; color: purple" target="_blank" class="btn-floating btn-lg rgba-white-slight mx-1"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <!--/.Social buttons-->
+      </div>
     </div>
-  
-    <!-- Subject -->
-    <div>
-      <label>Subject</label>
-      <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4"
-      [ngClass]="{'is-invalid': (contactForm.get('contactFormSubjects').touched || contactForm.get('contactFormSubjects').dirty) && !contactForm.get('contactFormSubjects').valid }" required>
-      >
-        <option value="" disabled>Choose option (required)</option>
-        <option value="Feedback" selected>Feedback</option>
-        <option value="Make order">Make order</option>
-        <option value="Report a bug">Report a bug</option>
-      </select>
-      <span class="h3 invalid-feedback">
-        <span *ngIf="!!contactForm.get('contactFormSubjects').errors?.required">
-          <i class="fa fa-info-circle"></i> Subject is required.
-        </span>
-      </span>
-    </div>
-  
-  
-    <!-- Message -->
-    <div class="form-group">
-      <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
-        rows="3" placeholder="Message (required)" 
-        [ngClass]="{'is-invalid': (contactForm.get('contactFormMessage').touched || contactForm.get('contactFormMessage').dirty) && !contactForm.get('contactFormMessage').valid }" required></textarea>
-        <span class="h3 invalid-feedback">
-          <span *ngIf="!!contactForm.get('contactFormMessage').errors?.required">
-            <i class="fa fa-info-circle"></i> Message is required.
-          </span>
-        </span>
-    </div>
-  
-    <!-- Send button -->
-    <button type="submit" class="btn btn-secondary" style="width: 40%; padding-right: 20px; padding-left: 20px" 
-    [disabled]="!contactForm.valid">SEND</button>
-  </form>
-    <!-- Default form contact -->
+  </div>
 </div>
+
+
+
+

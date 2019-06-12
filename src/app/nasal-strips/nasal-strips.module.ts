@@ -5,7 +5,15 @@ import { NasalStripsListComponent } from './nasal-strips-list.component';
 
 const routes: Routes = [
   {
-    path: '', component: NasalStripsListComponent
+    path: '', component: NasalStripsListComponent,
+    data: {
+      title: ' - NASAL STRIPS',
+      description: `Sleep comfortably in which ever position you desire with Breathe Easy’s
+      anti-snoring nasal strips. The healthy drug-free solution to enable a good nights
+      sleep without a sound.`,
+      keywords: `good nights sleep, ease blocked Nose, ideal performance.`,
+      author: 'Obeke Calistus'
+    }
   }
 ];
 

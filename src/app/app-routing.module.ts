@@ -8,10 +8,28 @@ const routes: Routes = [
   {path: 'careline', children: [
       {path: '', component: IndexComponent, children: [
           {path: '', redirectTo: 'home', pathMatch: 'full'},
-          {path: 'home', component: HomeComponent},
+          {path: 'home', component: HomeComponent,
+          data: {
+            title: ' - OFFICIAL HOMEPAGE',
+            description: `Caline/skinlab brands are top notch cosmestics products dermatologically tested and designed
+            to cater for all skin types.Derma diagonises and recommendation, treatment of skin and skin related diseases,
+             skin care, hair beauty, fragrance, make up. Our services cuts accross beauty spars, saloons, phermacies,
+             hospitals, supermarkets etc. we are represented in all states through our
+            distributors. We also have our branded shops close to you. Baby Rash diaper rash treatment is a
+            hypoallergenic cream that can be applied
+            on all skin types.`,
+            keywords: `services, products, Growth, Inhibitor Cream, Shea Butter, Cucumber and Mint, Baby Diaper Rash Cream,
+            hair care, sunscreen, argan oil, gloves, perfumes, cleansers
+             natural hair inhibitor system, male pattern baldness`,
+            author: 'Obeke Calistus'
+          }
+          },
         ]
       },
-      {path: 'access', loadChildren: './access/access.module#AccessModule'},
+      {
+        path: 'access',
+        loadChildren: './access/access.module#AccessModule',
+      },
       {path: 'products/babyline', loadChildren: './baby-product/baby-products.module#BabyProductsModule'},
       {path: 'products/cc-cream', loadChildren: './cc-cream/cc-creams.module#CcCreamsModule'},
       {path: 'products/cleansers', loadChildren: './cleanser/cleansers.module#CleansersModule'},

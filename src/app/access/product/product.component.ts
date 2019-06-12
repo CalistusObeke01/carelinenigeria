@@ -46,7 +46,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       if (data.id) {
         this.productForm.reset();
         this.toastrService.success('Product created successfully');
-        this.router.navigateByUrl('/all-products');
+        this.router.navigateByUrl('/careline/access/all-products');
       } else {
         this.toastrService.error('Error while creating product');
         console.log(data);

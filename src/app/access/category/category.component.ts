@@ -36,7 +36,7 @@ export class CategoryComponent implements OnInit {
           this.categoryForm.reset();
           this.message = 'Category created successfully';
           setTimeout(() => {
-            this.router.navigateByUrl('/categories');
+            this.router.navigateByUrl('/careline/access/categories');
           }, 5000);
         }
         this.isLoading = false;

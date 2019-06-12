@@ -26,8 +26,11 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     console.log(this.contactForm);
     console.log('Saved: ' + JSON.stringify(this.contactForm.value));
-    alert('Your message has been sent.');
     this.contactForm.reset();
+
+    setTimeout(_ => {
+      alert('Your message has been sent.');
+    }, 1000);
   }
 
   fetchAddress() {

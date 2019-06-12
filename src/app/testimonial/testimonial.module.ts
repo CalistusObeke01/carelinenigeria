@@ -7,7 +7,13 @@ import { TestimonialComponent } from './testimonial.component';
 const routes: Routes = [
   {
     path: '',
-    component: TestimonialComponent
+    component: TestimonialComponent,
+    data: {
+      title: ' - TESTIMONIALS',
+      description: `Testimonials from Carelinenigeria`,
+      keywords: `Excellent, lovely, great, testimonials, awesome`,
+      author: 'Obeke Calistus'
+    }
   }
 ];
 

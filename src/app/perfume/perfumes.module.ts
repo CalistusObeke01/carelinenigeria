@@ -6,7 +6,13 @@ import { PerfumesComponent } from './perfumes.component';
 const routes: Routes = [
   {
     path: '',
-    component: PerfumesComponent
+    component: PerfumesComponent,
+    data: {
+      title: ' - PERFUMES',
+      description: ``,
+      keywords: ``,
+      author: 'Obeke Calistus'
+    }
   }
 ];
 

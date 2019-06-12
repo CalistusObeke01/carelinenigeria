@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import {CategoryResolver} from '../core/category.resolver';
-import {IndexComponent} from '../public/index/index.component';
 import {CategoryComponent} from './category/category.component';
 import {ProductComponent} from './product/product.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
@@ -12,18 +11,30 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 
 const routes: Routes = [
   {
-    path: '', component: IndexComponent, children: [
-      {
-        path: 'creating_category', component: CategoryComponent
-      },
-      {path: 'creating_product', component: ProductComponent
-      },
-      {path: 'all-products', component: ProductListComponent},
-      {path: 'categories', component: CategoryListComponent, resolve: {
-          categories: CategoryResolver
-        }}
-    ]}
+    path: 'creating_category',
+    component: CategoryComponent,
+    data: {title: 'Creating Categories - Carelinenigeria'}
+  },
+  {
+    path: 'creating_product',
+    component: ProductComponent,
+    data: {title: 'Creating Products - Carelinenigeria'}
+  },
+  {
+    path: 'all-products',
+    component: ProductListComponent,
+    data: {title: 'All Products - Carelinenigeria'}
+  },
+  {
+    path: 'categories',
+    component: CategoryListComponent,
+    resolve: {
+      categories: CategoryResolver
+    },
+    data: {title: 'All Categories - Carelinenigeria'}
+  }
 ];
+
 
 @NgModule({
   declarations: [CategoryComponent, ProductComponent, CategoryListComponent, ProductListComponent],

@@ -1,5 +1,5 @@
-.bg-img {
-    background-image: url("/assets/images/Abstract-stars-falling-wallpapers-HD.jpg");
-    background-repeat: no-repeat;
-    float: right;
+.txt-align-middle {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
 }

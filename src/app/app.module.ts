@@ -1,4 +1,4 @@
-import {BrowserModule, Title} from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
@@ -18,6 +18,8 @@ import {FooterComponent} from './footer/footer.component';
 import {ToastrModule} from 'ngx-toastr';
 import {IndexComponent} from './public/index/index.component';
 import {AccessModule} from './access/access.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import {AccessModule} from './access/access.module';
     IndexComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -52,6 +54,7 @@ import {AccessModule} from './access/access.module';
     // DeepCleansingStripsModule,
     // NasalStripsModule,
     AccessModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     // MessagesModule,
     // CleansersModule,
     // WaxStripsModule,
@@ -69,10 +72,10 @@ import {AccessModule} from './access/access.module';
     // ArganOilModule,
     // JojobaOilModule,
     // SweetAlmondOilModule,
-    // TeaTreeOilModule
+    // TeaTreeOilModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [Title],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

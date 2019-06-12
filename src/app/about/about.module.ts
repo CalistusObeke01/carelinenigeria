@@ -8,7 +8,8 @@ import { AboutComponent } from './about.component';
 const routes: Routes = [
   {
     path: '',
-    component:  AboutComponent
+    component:  AboutComponent,
+    data: {title: 'About Us - Carelinenigeria'}
   }
 ];
 
