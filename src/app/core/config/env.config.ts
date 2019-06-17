@@ -5,7 +5,7 @@ const getHost = () => {
   return `${protocol}//${host}`;
 };
 
-const apiURI = _isDev ?  '/api' : 'http://carelinenigeria.herokuapp.com/api';
+const apiURI = _isDev ?  'http://carelinenigeria.herokuapp.com/api' : '/api';
 
 // console.log('inside const');
 
