@@ -13,17 +13,17 @@ const routes: Routes = [
   {
     path: 'creating_category',
     component: CategoryComponent,
-    data: {title: 'Creating Categories - Carelinenigeria'}
+    data: {title: ' - CREATING CATEGORIES'}
   },
   {
     path: 'creating_product',
     component: ProductComponent,
-    data: {title: 'Creating Products - Carelinenigeria'}
+    data: {title: ' - CREATING PRODUCTS'}
   },
   {
     path: 'all-products',
     component: ProductListComponent,
-    data: {title: 'All Products - Carelinenigeria'}
+    data: {title: ' - ALL PRODUCTS'}
   },
   {
     path: 'categories',
@@ -31,7 +31,7 @@ const routes: Routes = [
     resolve: {
       categories: CategoryResolver
     },
-    data: {title: 'All Categories - Carelinenigeria'}
+    data: {title: ' - ALL CATEGORIES'}
   }
 ];
 

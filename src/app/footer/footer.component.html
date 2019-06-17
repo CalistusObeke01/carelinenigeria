@@ -2,82 +2,85 @@
 <!--Footer-->
 <footer class="page-footer font-small pt-4 df" id="footer"> 
   <!-- stylish-color-dark -->
-  <!--Footer Links-->
-  <div class="container-fluid text-center text-md-left" id="map">
-
-      <!-- Footer links -->
-      <div class="row text-center text-md-left mt-3 pb-3">
-
-          <!--First column-->
-          <div class="col-md-5 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase font-weight-bold">careline nigeria</h6>
-              <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>Care Line, one of the world's leading cosmetics companies, was established in Sydney, 
-                  Australia in 1982. Underlining its credentials are the advanced research  facilities
-                  and state-of-the-art manufacturing competencies, which have supported Care Line's 
-                  geographic expansion to cover the Far East markets.
-              </p>
-          </div> 
-          <!--/.First column-->
-
-          <hr class="w-100 clearfix d-md-none">
-
-          <!--Second column-->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase font-weight-bold">Products</h6>
-              <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p class="text-uppercase mb-4 font-weight-bold">Skinlab</p>
-              <ul class="list-unstyled list-inline">
-                  <li style="margin-top: 10px" *ngFor="let skinLabProduct of skinLabProducts">
-                      <a routerLink ="{{ skinLabProduct.routerLink }}" routerLinkActive="active"> {{ skinLabProduct.product }} </a>
-                  </li>                           
-              </ul>
-          </div>
-
-          <!--/.Second column-->
-          <hr class="w-100 clearfix d-md-none">
-          
-          <!--Third column-->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase font-weight-bold "> Contact </h6>
-              <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p><i class="fa fa-map-marker mr-3"></i> {{ fetchAddress() }} </p>
-                  <p><a href="mailto:info@carelinenigeria.com"><i class="fa fa-envelope mr-3"></i> info@carelinenigeria.com </a></p>
-              <p><i class="fa fa-phone mr-3"></i> + 234 809 066 6043</p>
-          </div>
-          <!--/.Third column-->
-      </div>
-      <!-- Footer links -->
-      <hr>
+  <!--Footer Links--> 
   
-      <div class="row py-3 d-flex align-items-center">
+    <div class="container-fluid text-center text-md-left" id="map" style="background-image: url(/assets/images/map.png);" >
 
-          <!--Grid column-->
-          <div class="col-md-8 col-lg-8">
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
 
-              <!--Copyright-->
-              <p class="text-center text-md-left grey-text">©  {{fetchYear()}} Copyright: <a  href="https://www.carelinenigeria.com/"><strong style="color: #2196F3 !important">Careline Nigeria</strong></a></p>
-              <!--/.Copyright-->         
-          </div>
-          <!--Grid column-->
+            <!--First column-->
+            <div class="col-md-5 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase font-weight-bold">careline nigeria</h6>
+                <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Care Line, one of the world's leading cosmetics companies, was established in Sydney, 
+                    Australia in 1982. Underlining its credentials are the advanced research  facilities
+                    and state-of-the-art manufacturing competencies, which have supported Care Line's 
+                    geographic expansion to cover the Far East markets.
+                </p>
+            </div> 
+            <!--/.First column-->
 
-          <!--Grid column-->
-          <div class="col-md-4 col-lg-4 ml-lg-0">
-              <!--Social buttons-->
-              <div class="text-center text-md-right">
-                  <ul class="list-unstyled list-inline">
-                      <li class="list-inline-item"><a href="https://www.facebook.com/carelinenigeria" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-facebook"></i></a></li>
-                      <li class="list-inline-item"><a href="https://www.instagram.com/carelinenigeria" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-instagram"></i></a></li>                            
-                      <li class="list-inline-item"><a href="https://www.twitter.com/carelinenig" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-twitter"></i></a></li>
-                  </ul>
-              </div>
-              <!--/.Social buttons-->
-          </div>
-          <!--Grid column-->
+            <hr class="w-100 clearfix d-md-none">
 
-      </div>
+            <!--Second column-->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h6 class="text-uppercase font-weight-bold">Products</h6>
+                <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p class="text-uppercase mb-4 font-weight-bold">Skinlab</p>
+                <ul class="list-unstyled list-inline">
+                    <li style="margin-top: 10px" *ngFor="let skinLabProduct of skinLabProducts">
+                        <a routerLink ="{{ skinLabProduct.routerLink }}" routerLinkActive="active"> {{ skinLabProduct.product }} </a>
+                    </li>                           
+                </ul>
+            </div>
 
-  </div>
+            <!--/.Second column-->
+            <hr class="w-100 clearfix d-md-none">
+            
+            <!--Third column-->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase font-weight-bold "> Contact </h6>
+                <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p><i class="fa fa-map-marker mr-3"></i> {{ fetchAddress() }} </p>
+                    <p><a href="mailto:info@carelinenigeria.com"><i class="fa fa-envelope mr-3"></i> info@carelinenigeria.com </a></p>
+                <p><i class="fa fa-phone mr-3"></i> + 234 809 066 6043</p>
+            </div>
+            <!--/.Third column-->
+        </div>
+        <!-- Footer links -->
+        <hr>
+
+        <div class="row py-3 d-flex align-items-center">
+
+            <!--Grid column-->
+            <div class="col-md-8 col-lg-8">
+
+                <!--Copyright-->
+                <p class="text-center text-md-left grey-text">©  {{fetchYear()}} Copyright: <a  href="https://www.carelinenigeria.com/"><strong style="color: #2196F3 !important">Careline Nigeria</strong></a></p>
+                <!--/.Copyright-->         
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 col-lg-4 ml-lg-0">
+                <!--Social buttons-->
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/carelinenigeria" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/carelinenigeria" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-instagram"></i></a></li>                            
+                        <li class="list-inline-item"><a href="https://www.twitter.com/carelinenig" rel="noopener" target="_blank" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <!--/.Social buttons-->
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </div>
+  
+
 
 </footer>
 <!--/.Footer-->

@@ -6,6 +6,7 @@ import { TeaTreeOilService } from './tea-tree-oil.service';
   templateUrl: './tea-tree-oil.component.html',
   styleUrls: ['./tea-tree-oil.component.css']
 })
+
 export class TeaTreeOilComponent implements OnInit {
   products: Organics[] = [];
   constructor(private teaTreeOilService: TeaTreeOilService) { }
@@ -13,6 +14,7 @@ export class TeaTreeOilComponent implements OnInit {
   ngOnInit() {
     this.showTeaTreeOils();
   }
+
   showTeaTreeOils() {
     this.teaTreeOilService.getTeaTreeOils(`teaTree`).subscribe(
       (teaTreeOilProducts: any) => {

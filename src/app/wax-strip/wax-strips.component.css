@@ -1,11 +1,4 @@
-#ty:nth-of-type(even) {
-    background-color: grey;
-}
 
-/* 
-div>.skip-bgc:nth-of-type(2n) {
-    background-color: grey;
-} */
 
 hr {
     border: none;
