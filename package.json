@@ -40,7 +40,7 @@
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng2-go-top-button": "^7.1.0",
     "ng2-slim-loading-bar": "^4.0.0",
     "ngx-take-until-destroy": "^5.4.0",
